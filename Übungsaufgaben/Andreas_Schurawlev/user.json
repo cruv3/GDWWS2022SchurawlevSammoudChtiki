@@ -1,0 +1,38 @@
+[
+    {
+        "vorname": "Max",
+        "nachname": "Mustermann",
+        "email": "max@mustermann.de",
+        "wohnort": "Köln"
+    },
+    {
+        "vorname": "Andreas",
+        "nachname": "Schurawlev",
+        "email": "andi@schurawlev.de",
+        "wohnort": "Köln"
+      },
+      {
+        "vorname": "Johannes",
+        "nachname": "Petrenko",
+        "email": "johannes@petrenko.de",
+        "wohnort": "München"
+      },
+      {
+        "vorname": "Juergen",
+        "nachname": "Fech",
+        "email": "juergen@fech.de",
+        "wohnort": "Essen"
+      },
+      {
+        "vorname": "Vio",
+        "nachname": "letta",
+        "email": "vio@letta.de",
+        "wohnort": "Amberg"
+      },
+      {
+        "vorname": "Ola",
+        "nachname": "Senior",
+        "email": "ola@senior.de",
+        "wohnort": "Dortmund"
+      }
+]

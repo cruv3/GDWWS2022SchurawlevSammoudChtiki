@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Berlin",
+    "rank": 1,
+    "einwohner": 3800000,
+    "bundesland": "Berlin"
+  },
+  {
+    "name": "Hamburg",
+    "rank": 2,
+    "einwohner": 1841179,
+    "bundesland": "Hamburg"
+  },
+  {
+    "name": "München",
+    "rank": 3,
+    "einwohner": 1500000,
+    "bundesland": "Bayern"
+  },
+  {
+    "name": "Köln",
+    "rank": 4,
+    "einwohner": 1100000,
+    "bundesland": "NRW"
+  },
+  {
+    "name": "Frankfurt",
+    "rank": 5,
+    "einwohner": 752000,
+    "bundesland": "Hessen"
+  },
+  {
+    "name": "Stuttgart",
+    "rank": 6,
+    "einwohner": 635000,
+    "bundesland": "Baden-Württemberg"
+  },
+  {
+    "name": "Düsseldorf",
+    "rank": 7,
+    "einwohner": 620000,
+    "bundesland": "NRW"
+  },
+  {
+    "name": "Leipzig",
+    "rank": 8,
+    "einwohner": 602000,
+    "bundesland": "Sachsen"
+  },
+  {
+    "name": "Dortmund",
+    "rank": 9,
+    "einwohner": 601000,
+    "bundesland": "NRW"
+  },
+  {
+    "name": "Essen",
+    "rank": 10,
+    "einwohner": 591000,
+    "bundesland": "NRW"
+  }
+]
