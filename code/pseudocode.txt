@@ -40,6 +40,13 @@ fun addProductoList(username : String, for : String,productName : String){
   newProduct.for = for
 }
 
+<<<<<<< HEAD
 fun calculate(){
   
 }
+=======
+// calculate the sum for every user
+fun calculate(){
+  
+}
+>>>>>>> 9812d73342fffc154cfac60ca16a64ceca6512d7
