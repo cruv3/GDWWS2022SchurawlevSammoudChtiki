@@ -1,0 +1,11 @@
+{
+  "name": "aufgaben2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node grundlagen_javascript.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
