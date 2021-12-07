@@ -1,0 +1,23 @@
+{
+  "name": "gdw2021",
+  "version": "1.0.0",
+  "description": "WG API",
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cruv3/GDWWS2022SchurawlevSammoudChtiki.git"
+  },
+  "author": "SchurawlevSammoudChtiki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cruv3/GDWWS2022SchurawlevSammoudChtiki/issues"
+  },
+  "homepage": "https://github.com/cruv3/GDWWS2022SchurawlevSammoudChtiki#readme",
+  "dependencies": {
+    "node-fetch": "^3.1.0"
+  },
+  "type": "module"
+}
