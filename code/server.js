@@ -1,7 +1,7 @@
 const fs = require("fs")
 const fetch = require("node-fetch");
 
-getProduct("chocolate")
+getProduct("butter")
 
 async function getProduct(name){
 //Open Exchange Rate API
