@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/cruv3/GDWWS2022SchurawlevSammoudChtiki#readme",
   "dependencies": {
-    "node-fetch": "2.0"
+    "express": "^4.17.2",
+    "node-fetch": "2.0",
+    "request": "^2.88.2"
   }
 }

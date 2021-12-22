@@ -1,0 +1,17 @@
+[
+    {
+        "uri": "test",
+        "name": "test",
+        "mitbewohner": [
+            {
+                "name": "test"
+            },
+            {
+                "name": "test"
+            },
+            {
+                "name": "test"
+            }
+        ]
+    }
+]

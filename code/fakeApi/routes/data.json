@@ -1,0 +1,88 @@
+{
+    "sortiment":[
+        {
+            "uri": "localhost:3001/sortiment/0",
+            "id": 0,
+            "product": "test",
+            "brand": "test",
+            "price": "$10.99"
+        },
+        {
+            "uri": "localhost:3001/sortiment/1",
+            "id": 1,
+            "product": "Aluminum Foil",
+            "brand": "Toppits",
+            "price": "$2.49"
+        },
+        {
+            "uri": "localhost:3001/sortiment/2",
+            "id": 2,
+            "product": "Apple Juice",
+            "brand": "Pfanner",
+            "price": "$1.50"
+        },
+        {
+            "uri": "localhost:3001/sortiment/3",
+            "id": 3,
+            "product": "Apples",
+            "brand": "Boskop",
+            "price": "$5.79"
+        },
+        {
+            "uri": "localhost:3001/sortiment/4",
+            "id": 4,
+            "product": "Bacon",
+            "brand":"Zimbo",
+            "price": "$3.79"
+        },
+        {
+            "uri": "localhost:3001/sortiment/5",
+            "id": 5,
+            "product": "Baguette",
+            "brand":"Brinker",
+            "price": "$4.19"
+        },
+        {
+            "uri": "localhost:3001/sortiment/6",
+            "id": 6,
+            "product": "Beef Meat",
+            "brand": "Joerg",
+            "price": "$2.74"
+        },
+        {
+            "uri": "localhost:3001/sortiment/7",
+            "id": 7,
+            "product": "Beer",
+            "brand":"Krombacher",
+            "price": "$0.75"
+        },
+        {
+            "uri": "localhost:3001/sortiment/8",
+            "id": 8,
+            "product": "Butter",
+            "brand": "Rama",
+            "price": "$2.69"
+        },
+        {
+            "uri": "localhost:3001/sortiment/9",
+            "id": 9,
+            "product": "Carrots",
+            "brand": "Vita",
+            "price": "$0.99"
+        },
+        {
+            "uri": "localhost:3001/sortiment/10",
+            "id": 10,
+            "product": "Cereal",
+            "brand":"Nestle",
+            "price": "$2.67"
+        },
+        {
+            "uri": "localhost:3001/sortiment/11",
+            "id": 11,
+            "product": "Sugar",
+            "brand":"Reifer & Lang",
+            "price": "$2.67"
+        }
+    ]
+}
