@@ -1,6 +1,9 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+
+// resources
 const wgRoutes = require('./resources/wg')
+const userRoutes = require('./resources/user')
 
 const app = express()
 
@@ -15,6 +18,7 @@ app.listen(3000, () => {
 
 // Routes
 app.use('/wg', wgRoutes);
+app.use('/mitbewohner', userRoutes)
 
 // Starting Page
 

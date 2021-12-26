@@ -1,53 +1,148 @@
 const express = require('express');
+const fs = require('fs')
 const bodyParser = require("body-parser")
 const router = express.Router();
 
 const mainUri = 'localhost:3000'
 
-const jsonHelper = require("../help/JsonHelper")
+const jsonHelper = require("../help/JsonHelper");
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
 
+
 // WG ausgeben
-router.get('/',(req,res,next)=>{
-    wgList = jsonHelper.returnWG()
-    console.log(wgList)
-    res.status(200).json({
-        JSON: "xD"
+router.get('/',(req,res)=>{
+    fs.readFile(jsonHelper.pathToJson, (err,data)=>{
+        if(err){
+            res.status(500).json(err)
+        }
+        const content = JSON.parse(data)
+        res.status(200).json(content)
     })
 })
 
 // WG anlegen
-router.post('/', (req, res, next)=>{
-    if(req.body.name == undefined){
-        req.statusCode(400).json({
-            message: "Body in POST is empty",
-            missing: "name"
+router.post('/', (req, res)=>{
+    if(req.body.name == undefined || req.body.mitbewohner == undefined){
+        res.status(400).json({
+            message: "Missing Body requierments",
         })
-        return
     }
 
-    // function that checks wgname existence 
-    if(jsonHelper.checkIfWGExist(req.body.name)){
-        res.status(409).json({
-            WG_Name: "A WG with this name already exist"
-        })
-        return
-    }
+    fs.readFile(jsonHelper.pathToJson, (err,data)=>{
+        if(err){
+            res.status(400).json(err)
+        }
+        const content = JSON.parse(data)
 
-    // creates wg
+        // checks if wg already exist
+        for(i in content){
+            if(content[i].name == req.body.name){
+                return res.status(409).json({
+                    WG_Name: "A WG with this name already exist"
+                })
+            }
+        }
+
+        // if not add to json
+
+        const newWG = {
+            uri: mainUri + '/wg/' + req.body.name,
+            name : req.body.name,
+            mitbewohner: req.body.mitbewohner
+        }
+
+        content.push(newWG)
+        fs.writeFile(jsonHelper.pathToJson, JSON.stringify(content, null, 4), (err)=>{
+            if (err){
+                res.status(500).json(err) 
+            }
+        })
+        res.status(201).json({
+            status: "added",
+            newWG
+        })
+    })
+})
+
+// wg bearbeiten
+
+router.put('/:wgID', (req,res)=>{
+    if(req.body == "{}" || req.body.name == undefined || req.body.mitbewohner == undefined){
+        res.status(400).json({
+            message: "Body in PUT is empty",
+            name : req.body.name,
+            mitbewohner : req.body.mitbewohner
+        })
+    
+    }
     const newWG = {
         uri: mainUri + '/wg/' + req.body.name,
         name : req.body.name,
-        mitbewohner: []
+        mitbewohner: req.body.mitbewohner
     }
 
-    jsonHelper.addToJson(newWG)
+    fs.readFile(jsonHelper.pathToJson, (err,data)=>{
+        if(err){
+            res.status(500).json(err)
+        }
+        const content = JSON.parse(data)
+        for(i in content){
+            if(content[i].name == req.params.wgID){
+                content.splice(i,1)
 
-    res.status(201).json({
-        WG_created: newWG
+                content.push(newWG)
+                fs.writeFile(jsonHelper.pathToJson, JSON.stringify(content,null,4), (err)=>{
+                    if (err){
+                        res.status(500).json(err) 
+                    }
+                })
+                return res.status(200).json({
+                    status : "processed"
+                })
+            }
+        }
+
+        return res.status(400).json({
+            status : "BAD REQUEST",
+            message : "WG could not be found"
+        })
+    })
+})
+
+// wg loeschen
+
+router.delete('/:wgID', (req,res)=>{
+    if(req.body.name == undefined){
+        res.status(400).json({
+            message: "Missing Body requierments",
+        })
+    }
+
+    fs.readFile(jsonHelper.pathToJson, (err,data)=>{
+        if(err){
+            res.status(500).json(err)
+        }
+        const content = JSON.parse(data)
+        for(i in content){
+            if (content[i].name == req.params.wgID){
+                content.splice(i,1)
+                fs.writeFile(jsonHelper.pathToJson, JSON.stringify(content, null, 4), (err)=>{
+                    if (err){
+                        res.status(500).json(err) 
+                    }
+                })
+                return res.status(200).json({
+                    status: "deleted"
+                })
+            }
+        }
+        return res.status(400).json({
+            status : "BAD REQUEST",
+            message : "WG could not be found"
+        })
     })
 })
 

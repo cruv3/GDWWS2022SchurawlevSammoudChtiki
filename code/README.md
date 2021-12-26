@@ -9,6 +9,11 @@
 * router für wg wurde erstellt
 * /help/JsonHelper.js - deleteFromJson geht die splice funktion nicht richtig
 
+# 26.12.2021
+### mainApi
+* wg rest ist fertg implementiert - localhost:3000/wg
+* mitbewohner rest angefangen - localhost:3000/mitbewohner/:wgID
+
 # Ausführung:
 ### Prerequisites:
 * ```node```
