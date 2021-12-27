@@ -25,7 +25,7 @@ router.get('/',(req,res)=>{
 
 // WG anlegen
 router.post('/', (req, res)=>{
-    if(req.body.name == undefined || req.body.mitbewohner == undefined){
+    if(req.body.name == undefined){
         res.status(400).json({
             message: "Missing Body requierments",
         })
@@ -51,7 +51,7 @@ router.post('/', (req, res)=>{
         const newWG = {
             uri: mainUri + '/wg/' + req.body.name,
             name : req.body.name,
-            mitbewohner: req.body.mitbewohner
+            mitbewohner: []
         }
 
         content.push(newWG)
@@ -70,18 +70,18 @@ router.post('/', (req, res)=>{
 // wg bearbeiten
 
 router.put('/:wgID', (req,res)=>{
-    if(req.body == "{}" || req.body.name == undefined || req.body.mitbewohner == undefined){
+    if(req.body == "{}" || req.body.name == undefined){
         res.status(400).json({
             message: "Body in PUT is empty",
             name : req.body.name,
-            mitbewohner : req.body.mitbewohner
         })
     
     }
+    // loescht und erstellt neue wg -> keine bearbeitung
     const newWG = {
         uri: mainUri + '/wg/' + req.body.name,
         name : req.body.name,
-        mitbewohner: req.body.mitbewohner
+        mitbewohner: []
     }
 
     fs.readFile(jsonHelper.pathToJson, (err,data)=>{

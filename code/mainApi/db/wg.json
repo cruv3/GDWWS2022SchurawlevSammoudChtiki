@@ -4,13 +4,25 @@
         "name": "test",
         "mitbewohner": [
             {
-                "name": "test"
+                "name": "abii",
+                "schulden" :{
+                    "tom" : 50,
+                    "markus": 100
+                }
             },
             {
-                "name": "test"
+                "name": "tom",
+                "schulden" :{
+                    "abii" : 10,
+                    "markus": 20
+                }
             },
             {
-                "name": "test"
+                "name": "markus",
+                "schulden" :{
+                    "abii" : 100,
+                    "tom": 200
+                }
             }
         ]
     }
