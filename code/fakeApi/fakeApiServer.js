@@ -7,12 +7,20 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-const routes = require('./routes/routes.js')(app, fs);
+// Routes
+const productRoutes = require('./resources/products')
+
+app.use('/products', productRoutes)
 
 app.listen(3001, () => {
  console.log("Server running on port 3001");
 });
 
-app.get('/product',(req,res,next)=>{
-    res.json("./data.json")
-})
+app.get('/', (req, res) => {
+    res.send('welcome to the development api-server');
+  });
+
+
+module.exports = [
+    app
+]
