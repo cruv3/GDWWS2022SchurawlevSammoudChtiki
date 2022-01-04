@@ -5,24 +5,34 @@
         "mitbewohner": [
             {
                 "name": "abii",
-                "schulden" :{
-                    "tom" : 50,
+                "schulden": {
+                    "tom": 50,
                     "markus": 100
                 }
             },
             {
                 "name": "tom",
-                "schulden" :{
-                    "abii" : 10,
+                "schulden": {
+                    "abii": 10,
                     "markus": 20
                 }
             },
             {
                 "name": "markus",
-                "schulden" :{
-                    "abii" : 100,
+                "schulden": {
+                    "abii": 100,
                     "tom": 200
                 }
+            }
+        ]
+    },
+    {
+        "uri": "localhost:3000/wg/BesteWG",
+        "name": "BesteWG",
+        "mitbewohner": [
+            {
+                "name": "Ola",
+                "schulden": []
             }
         ]
     }

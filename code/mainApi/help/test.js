@@ -1,4 +1,4 @@
-const test = require('./JsonHelper')
+const test = require('./wgHelper')
 
 const newWG = {
     uri: "xD" + '/wg/' + "xD",

@@ -14,6 +14,16 @@
 * wg rest ist fertg implementiert - localhost:3000/wg
 * mitbewohner rest angefangen - localhost:3000/mitbewohner/:wgID
 
+# 04.01.2021
+### mainApi
+* code etwas verschoenert durch Funktionen ausserhalb der requests
+* mitbewohner fast fertig -> funktion addSchulden funktioniert nicht richtig
+* addSchulden
+    *  -> Soll durch die Mitbewohnerliste gehen und in die Schuldenliste eintragen. (Funktioniert)
+    *  -> Das Übernehmen von vorher eingetragenen Schuldenwert. (Funktioniert nicht)
+    *  -> Prüfen ob der Name schon in der Schuldenliste vorhanden ist und demenstprechen ignorieren. (Funktioniert nicht)
+
+
 # Ausführung:
 ### Prerequisites:
 * ```node```
