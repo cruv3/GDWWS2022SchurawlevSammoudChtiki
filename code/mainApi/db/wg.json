@@ -31,8 +31,43 @@
         "name": "BesteWG",
         "mitbewohner": [
             {
-                "name": "Ola",
-                "schulden": []
+                "name": "Sanja",
+                "schulden": [
+                    {
+                        "Ruf": 0
+                    },
+                    {
+                        "Ruf": 0
+                    },
+                    {
+                        "happy": 0
+                    }
+                ]
+            },
+            {
+                "name": "Ruf",
+                "schulden": [
+                    {
+                        "Sanja": 0
+                    },
+                    {
+                        "Sanja": 0
+                    },
+                    {
+                        "happy": 0
+                    }
+                ]
+            },
+            {
+                "name": "happy",
+                "schulden": [
+                    {
+                        "Sanja": 0
+                    },
+                    {
+                        "Ruf": 0
+                    }
+                ]
             }
         ]
     }

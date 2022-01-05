@@ -1,4 +1,5 @@
 const fs = require('fs')
+const products = require('../../fakeApi/resources/products')
 
 const getUser = (path, wgID) =>{
     return new Promise((resolve, reject)=>{
@@ -178,6 +179,7 @@ const getSchulden = (path, wgID, mbID) =>{
         })
     })
 }
+
 
 const addSchulden = (path, wgID,mbID,schulden) =>{
     return new Promise((resolve, reject)=>{
