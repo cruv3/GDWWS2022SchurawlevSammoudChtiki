@@ -23,6 +23,11 @@
     *  -> Das Übernehmen von vorher eingetragenen Schuldenwert. (Funktioniert nicht)
     *  -> Prüfen ob der Name schon in der Schuldenliste vorhanden ist und demenstprechen ignorieren. (Funktioniert nicht)
 
+# 07.01.2021
+### mainApi
+* neue Datenstruktur -> nutzen MongoDB -> alter code ist im branch "old" 
+* WG Fertig
+* User noch nicht ganz
 
 # Ausführung:
 ### Prerequisites:
