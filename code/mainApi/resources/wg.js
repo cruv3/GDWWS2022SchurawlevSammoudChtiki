@@ -5,121 +5,114 @@ const router = express.Router();
 
 const mainUri = 'localhost:3000'
 
-const jsonHelper = require("../help/wgHelper");
-const jsonFileWG = "../mainApi/db/wg.json"
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
 
+// module
+const WG = require('../../db/wgSchema')
+
+
 
 // WG ausgeben
 router.get('/',(req,res)=>{
-    jsonHelper.getData(jsonFileWG).then((ans)=>{
-        if(ans){
-            res.status(200).json(ans)
-        }      
+    WG.find({},(error, data)=>{
+        res.status(200).json(data)
     })
 })
 
 router.get('/:wgID',(req,res)=>{
-    jsonHelper.getSpecificWg(jsonFileWG,req.params.wgID).then((ans)=>{
-        if(ans){
-            res.status(200).json(ans)
+    WG.find({"wg_name":req.params.wgID},(error,data)=>{
+        if(error){
+            res.status(400).json(error)
+            return
         }else{
-            res.status(400).json({error: "Could not find"})
-        }      
+            res.status(200).json(data)
+        }
     })
 })
 
 // WG anlegen
 router.post('/', (req, res)=>{
-    if(req.body.name == undefined){
+    if(req.body.wg_name == undefined){
         res.status(400).json({
             message: "Missing Body requierments",
         })
-    }
+    }else{
+        let wg = new WG()
+        wg.uri = mainUri + '/wg/' + req.body.wg_name
+        wg.wg_name = req.body.wg_name
+        wg.bewohner = []
 
-    jsonHelper.checkIfWGExist(jsonFileWG, req.body.name).then((found) =>{
-        if(found == true){
-            res.status(409).json({
-                error: "A WG with this name already exist"
-            })
-        }else{
-            const newWG = {
-                uri: mainUri + '/wg/' + req.body.name,
-                name : req.body.name,
-                mitbewohner: []
-            }
-
-            jsonHelper.addToJson(jsonFileWG, newWG).then((writing) =>{
-                if(writing == false){
-                    return res.status(500).json({
-                        error: "internal error"
-                    })
-                }
-
-                res.status(201).json({
-                    status: "added",
-                    newWG
+        wg.save((error)=>{
+            if(error){
+                res.status(409).json({
+                    status : "wg_name already exist",
+                    error : error
                 })
-            })
-        }
-    })
+                return
+            }else{
+                res.status(201).json({status : "created", wg})
+            }
+        })
+    }
 })
 
 // wg bearbeiten -> name veraendern
 
-router.put('/:wgID', (req,res)=>{
-    if(req.body == "{}" || req.body.name == undefined){
+router.put('/:wgID', async (req,res)=>{
+    if(req.body == "{}" || req.body.wg_name == undefined){
         res.status(400).json({
             message: "Body is empty",
             name : req.body.name,
         })
     }else{
-        const newWG = {
-            uri: mainUri + '/wg/' + req.body.name,
-            name : req.body.name,
-            mitbewohner: req.body.mitbewohner || undefined
+        let wg = {}
+        wg.uri = mainUri + '/wg/' + req.body.wg_name
+        wg.wg_name = req.body.wg_name
+        wg.bewohner = []
+
+        // uebernehmen der Bewohner
+        let wgFind = await WG.find({"wg_name":req.params.wgID})
+
+        if(!wgFind.length){
+            res.status(400).json({
+                stauts: `could not find ${req.params.wgID}`
+            })
         }
 
-        jsonHelper.changeWG(jsonFileWG, req.params.wgID, newWG).then((changed)=>{
-            if(changed){
-                res.status(200).json({
-                    status : "processed",
-                    newWG
-                })
+        // updaten
+        WG.updateOne({wg_name : req.params.wgID}, wg, (error)=>{
+            if(error){
+                res.status(400).json(error)
+                return
             }else{
-                res.status(400).json({
-                    status : "BAD REQUEST",
-                    message : "WG could not be found"
-                })
+                res.status(201).json({status: "updated", wg})
             }
-        })  
+        })
     }
 })
 
 // wg loeschen
 
 router.delete('/:wgID', (req,res)=>{
-    if(req.body.name == undefined){
+    if(req.body.wg_name == undefined){
         res.status(400).json({
             message: "Missing Body requierments",
         })
+    }else{
+        WG.deleteOne({wg_name : req.params.wgID}, (error)=>{
+            if(error){
+                res.status(400).json(error)
+                return
+            }else{
+                res.status(201).json({
+                    status : "deleted"
+                })
+            }
+        })
     }
-    jsonHelper.deleteWG(jsonFileWG,req.params.wgID).then((found)=>{
-        if(found == true){
-            res.status(200).json({
-                status : "deleted",
-                WG : req.params.wgID
-            })
-        }else{
-            res.status(400).json({
-                status : "BAD REQUEST",
-                message : "WG could not be found"
-            })
-        }
-    })
 })
 
 

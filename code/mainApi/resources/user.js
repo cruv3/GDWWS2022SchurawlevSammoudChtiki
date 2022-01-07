@@ -5,19 +5,24 @@ const router = express.Router();
 
 const mainUri = 'localhost:3000'
 
-const jsonHelper = require("../help/userHelper");
-const jsonFileWG = "../mainApi/db/wg.json"
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
-
+// module
+const MB = require('../../db/userSchema')
+const WG = require('../../db/wgSchema')
 
 // return all mitbewohner inside wg
 router.get('/:wgID', (req,res)=>{
-    jsonHelper.getUser(jsonFileWG, req.params.wgID)
-        .then((ans)=> res.status(200).json(ans))
-        .catch(() => res.status(400).json({error : "couldnt find wg"}))
+    WG.find({"wg_name":req.params.wgID},(error,data)=>{
+        if(error){
+            res.status(500).json(error)
+            return
+        }else{
+            res.status(200).json(data.bewohner)
+        }
+    })
 })
 
 // return mitbewohners schulden
@@ -28,24 +33,57 @@ router.get('/:wgID/:mbID/schulden', (req, res) =>{
 })
 
 // add to json inside mitbewohner, a mitbewohner
-router.post('/:wgID',(req,res)=>{
-    if(req.body == "{}" || req.body.name == undefined){
+router.post('/:wgID', async (req,res)=>{
+    if(req.body == "{}" || req.body.mb_name == undefined){
         res.status(400).json({
             message: "Body is empty",
-            name : req.body.name,
         })
     }else{
-        const newMitbewohner = {
-            name : req.body.name,
-            schulden : req.body.schulde || []
+        let mb = new MB()
+        mb.uri = mainUri + '/mitbewohner/' + req.params.wgID + "/" + req.body.mb_name
+        mb.wg_name = req.params.wgID
+        mb.mb_name = req.body.mb_name
+        mb.schulden = []
+
+        let wgFind = await WG.find({"wg_name":req.params.wgID})
+
+        // check if array is empty
+        if(!wgFind.length){
+            res.status(400).json({
+                status : `can not find WG with the name:  ${req.params.wgID}`,
+            })
+            return
         }
 
-        jsonHelper.addUser(jsonFileWG, req.params.wgID,newMitbewohner)
-            .then((ans) => res.status(201).json({
-                status : "added",
-                ans
-            }))
-            .catch(() => res.status(400).json({error : "couldnt find wg"}))
+        mb.save((error)=>{
+            if(error){
+                res.status(409).json({
+                    status : "mb_name already exist"
+                })
+                return
+            }else{
+
+                // have to update WG itself
+                // funktioniert nicht irgen
+                let bewohner = wgFind[0].bewohner
+                bewohner.push(req.body.mb_name)
+
+                let wg = new WG()
+                wg.uri = wgFind[0].uri
+                wg.wg_name = wgFind[0].wg_name
+                wg.bewohner = bewohner
+
+                // funktioniert nicht irgendein _id error
+                WG.updateOne({wg_name: req.params.wgID}, wg, (error)=>{
+                    if(error){
+                        console.log(error)
+                        return
+                    }
+                })
+
+                res.status(201).json({status : "created", mb})
+            }
+        })
     }
 })
 
@@ -56,8 +94,6 @@ router.post('/:wgID/:mbID/schulden',(req,res) =>{
             message: "Body is empty",
             name : req.body.name,
         })
-    }else{
-        jsonHelper.addSchulden(jsonFileWG, req.params.wgID,req.params.mbID,req.body)
     }
 })
 
@@ -69,17 +105,10 @@ router.put('/:wgID/:mbID',(req, res)=>{
             name : req.body.name,
         })
     }else{
-
         const change = {
             name : req.body.name || undefined,
             schulden : req.body.schulden || []
         }
-        jsonHelper.changeUser(jsonFileWG, req.params.wgID, req.params.mbID, change)
-            .then((ans)=> res.status(201).json({
-                status : "changed",
-                ans
-            }))
-            .catch(() => res.status(400).json({error : "could not find"}))
     }
 })
 
@@ -92,15 +121,7 @@ router.delete('/:wgID/:mbID', (req,res) =>{
             message: "Body is empty",
             name : req.body.name,
         })
-    }else{
-        jsonHelper.deleteUser(jsonFileWG,req.params.wgID,req.params.mbID)
-            .then((ans) => res.status(200).json({
-                status : "deleted",
-                ans
-            }))
-            .catch(() => res.status(400).json({error : "could not find"}))
     }
-
 })
 
 // delete schulden

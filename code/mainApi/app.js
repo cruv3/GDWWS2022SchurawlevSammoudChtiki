@@ -1,17 +1,21 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+const connectDB = require('../db/db')
 
 // resources
 const wgRoutes = require('./resources/wg')
 const userRoutes = require('./resources/user')
 
-const app = express()
 
+const app = express()
 app.use(bodyParser.json());
+
+// DB 
+connectDB()
+
 
 
 // start server
-
 app.listen(3000, () => {
     console.log("Server running on port 3000");
 })
