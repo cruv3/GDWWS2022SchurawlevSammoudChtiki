@@ -21,7 +21,7 @@ fetch(open_exchange_rate_api_request)
         return ratesJson.rates.EUR
     }).then((rate)=>{
         
-        fs.readFile("prices.json", (err, data) => {
+        fs.readFile("poc/prices.json", (err, data) => {
             if (err) throw (err)
             obj = JSON.parse(data)
             let result = []

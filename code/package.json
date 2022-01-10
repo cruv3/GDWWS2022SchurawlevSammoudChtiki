@@ -4,7 +4,8 @@
   "description": "WG API",
   "main": "index.js",
   "scripts": {
-    "test": "node server.js"
+    "poc": "node poc/server.js",
+    "api": "node mainApi/app.js"
   },
   "repository": {
     "type": "git",

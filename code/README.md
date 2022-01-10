@@ -1,3 +1,15 @@
+# Ausführung:
+
+### Prerequisites:
+* ```node```
+### Zuerst
+* ```cd code``` - Ihr Konsole muss im Ordner ```code``` sein
+* ```npm install``` - Installiert die Node Packages.
+### POC Ausführen
+* ```npm run poc``` - Führt den poc aus.
+### API Ausführen
+* ```npm run api``` - Führt den api aus.
+
 # Tagebuch:
 
 # 22.12.2021
@@ -29,10 +41,4 @@
 * WG Fertig
 * User noch nicht ganz
 
-# Ausführung:
-### Prerequisites:
-* ```node```
-### Aufgabe Ausführen
-* ```cd code``` - Ihr Konsole muss im Ordner ```code``` sein
-* ```npm install``` - Installiert die Node Packages.
-* ```npm run test``` - Führt den Server aus.
+
