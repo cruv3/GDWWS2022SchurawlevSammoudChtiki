@@ -9,10 +9,6 @@ let wgSchema = mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-    },
-    bewohner : {
-        type: Array,
-        required: true
     }
 })
 
