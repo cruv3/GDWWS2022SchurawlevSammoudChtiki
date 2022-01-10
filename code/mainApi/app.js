@@ -4,7 +4,7 @@ const connectDB = require('../db/db')
 
 // resources
 const wgRoutes = require('./resources/wg')
-const userRoutes = require('./resources/user')
+const mbRoutes = require('./resources/mb')
 
 
 const app = express()
@@ -22,7 +22,7 @@ app.listen(3000, () => {
 
 // Routes
 app.use('/wg', wgRoutes);
-app.use('/mitbewohner', userRoutes)
+app.use('/mb', mbRoutes)
 
 // Starting Page
 

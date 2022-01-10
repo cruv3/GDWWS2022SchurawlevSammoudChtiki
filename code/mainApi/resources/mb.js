@@ -7,11 +7,11 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
 // module
-const MB = require('../../db/userSchema')
+const MB = require('../../db/mbSchema')
 const WG = require('../../db/wgSchema')
 
 // alle mitbewohner in einem WG anzeigen
-// GET localhost:3000/user/:wgID
+// GET localhost:3000/mb/:wgID
 router.get('/:wgID', (req, res) => {
     WG.find({ "wg_name": req.params.wgID }, (error, data) => {
         if (error) {
@@ -24,7 +24,7 @@ router.get('/:wgID', (req, res) => {
 })
 
 // mitbewohners schulden in einem wg
-// GET localhost:3000/user/:wgID/:mbID/schulden
+// GET localhost:3000/mb/:wgID/:mbID/schulden
 router.get('/:wgID/:mbID/schulden', (req, res) => {
     jsonHelper.getSchulden(jsonFileWG, req.params.wgID, req.params.mbID)
         .then((ans) => res.status(200).json(ans))
@@ -32,7 +32,7 @@ router.get('/:wgID/:mbID/schulden', (req, res) => {
 })
 
 // mitbewohner in einem wg hinzufügen
-// POST localhost:3000/user/:wgID
+// POST localhost:3000/mb/:wgID
 router.post('/:wgID', async (req, res) => {
     if (req.body == "{}" || req.body.mb_name == undefined) {
         res.status(400).json({
@@ -96,7 +96,7 @@ router.post('/:wgID/:mbID/schulden', (req, res) => {
 })
 
 //mitbewohner in einem wg bearbeiten
-// PUT localhost:3000/user/:wgID/:mbID
+// PUT localhost:3000/mb/:wgID/:mbID
 router.put('/:wgID/:mbID', (req, res) => {
     if (req.body == "{}" || req.body.name == undefined) {
         res.status(400).json({
@@ -115,7 +115,7 @@ router.put('/:wgID/:mbID', (req, res) => {
 //TODO
 
 //mitbewohner loeschen
-// DELETE localhost:3000/user/:wgID/:mbID
+// DELETE localhost:3000/mb/:wgID/:mbID
 router.delete('/:wgID/:mbID', (req, res) => {
     if (req.body == "{}" || req.body.name == undefined) {
         res.status(400).json({
