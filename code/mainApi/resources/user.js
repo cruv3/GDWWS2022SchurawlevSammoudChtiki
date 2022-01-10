@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs')
 const bodyParser = require("body-parser")
 const router = express.Router();
 const mainUri = 'localhost:3000'
