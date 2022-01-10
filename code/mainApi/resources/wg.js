@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs')
 const bodyParser = require("body-parser")
 const router = express.Router();
 
@@ -10,8 +9,6 @@ router.use(bodyParser.urlencoded({ extended: true }))
 
 // module
 const WG = require('../../db/wgSchema')
-
-
 
 // Alle WGs ausgeben 
 // GET localhost:3000/wg
