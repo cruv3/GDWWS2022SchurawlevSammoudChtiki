@@ -21,18 +21,25 @@ router.get('/', (req, res) => {
 // Ein wg mit Namen finden
 // GET localhost:3000/wg/:wgID
 router.get('/:wgID', (req, res) => {
-    WG.find({ "wg_name": req.params.wgID }, (error, data) => {
-        if (error) {
-            res.status(400).json(error)
-            return
-        } else {
-            res.status(200).json(data)
-        }
-    })
+    if (req.params.wgID) {
+        WG.find({ "wg_name": req.params.wgID }, (error, data) => {
+            if (error) {
+                res.status(400).json(error)
+                return
+            } else {
+                res.status(200).json(data)
+            }
+        })
+    }else{
+        res.status(400).json({
+            message: "couldnt read params",
+        })
+    }
 })
 
 // WG hinzufügen
 // POST localhost:3000/wg/
+// wg_name soll im body des requests sein
 router.post('/', (req, res) => {
     if (req.body.wg_name == undefined) {
         res.status(400).json({
