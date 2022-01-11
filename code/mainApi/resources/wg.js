@@ -75,26 +75,26 @@ router.put('/:wgID', async (req, res) => {
             name: req.body.name,
         })
     } else {
-        let wg = {}
-        wg.uri = mainUri + '/wg/' + req.body.wg_name
-        wg.wg_name = req.body.wg_name
-        wg.bewohner = []
-
-        // uebernehmen der Bewohner
-        let wgFind = await WG.find({ "wg_name": req.params.wgID })
-
-        if (!wgFind.length) {
-            res.status(400).json({
-                stauts: `could not find ${req.params.wgID}`
-            })
-        }
 
         // updaten
-        WG.updateOne({ wg_name: req.params.wgID }, wg, (error) => {
+        WG.updateOne({ wg_name: req.params.wgID }, {$set:{
+            wg_name : req.body.wg_name,
+            uri : mainUri + '/wg/' + req.body.wg_name}}, (error) => {
+
             if (error) {
-                res.status(400).json(error)
+                res.status(400).json({status: `could not find ${req.params.wgID}`, error})
                 return
             } else {
+
+                // also update all mitbewohner
+                MB.updateMany({wg_name: req.params.wgID}, {$set:{
+                    wg_name : req.body.wg_name,
+                    uri : mainUri + '/wg/' + req.body.wg_name}},(error,data)=>{
+                        if (error) {
+                            console.log(error)
+                            return
+                        }
+                    })
                 res.status(201).json({ status: "updated", wg })
             }
         })
@@ -114,8 +114,19 @@ router.delete('/:wgID', (req, res) => {
                 res.status(400).json(error)
                 return
             } else {
+
+                // also delete mitbewohner
+
+                MB.deleteMany({wg_name : req.params.wgID},(error)=>{
+                    if(error){
+                        console.log(error)
+                        return
+                    }
+                })
+
                 res.status(201).json({
-                    status: "deleted"
+                    status: "deleted",
+                    wg_name : req.params.wgID
                 })
             }
         })
