@@ -8,7 +8,6 @@ router.use(bodyParser.urlencoded({ extended: true }))
 
 // module
 const MB = require('../../db/mbSchema')
-const WG = require('../../db/wgSchema')
 
 // alle mitbewohner in einem WG anzeigen
 // GET localhost:3000/mb/:wgID

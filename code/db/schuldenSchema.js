@@ -10,8 +10,13 @@ let sdSchema = mongoose.Schema({
         required: true,
         uniquie: true
     },
+    wg_name : {
+        type: String,
+        required: true
+    },
     schulden:{
-        
+        type: Object,
+        required: true 
     }
 })
 
