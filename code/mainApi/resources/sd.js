@@ -83,16 +83,13 @@ router.post('/:wgID/:mbID', (req, res) => {
                             if (!data)
                                 res.status(400).json("mb existiert nicht")
                             else {
-                                let schuld = {
-                                    sd_name: req.body.sd_name,
-                                    wohlhaber: req.body.wohlhaber,
-                                    summe: req.body.summe
-                                }
                                 let sd = new SD()
-                                sd.uri = mainUri + '/schulden/' + req.params.wgID + "/" + req.params.wgID + "/" + req.body.sd_name
+                                sd.uri = mainUri + '/sd/' + req.params.wgID + "/" + req.params.wgID + "/" + req.body.sd_name
                                 sd.wg_name = req.params.wgID
                                 sd.mb_name = req.params.mbID
-                                sd.schuld = schuld
+                                sd.sd_name= req.body.sd_name
+                                sd.wohlhaber= req.body.wohlhaber
+                                sd.summe= req.body.summe
                                 sd.save((error) => {
                                     if (error) {
                                         res.status(500).json(error)
@@ -120,7 +117,7 @@ router.delete('/:wgID/:mbID', (req, res) => {
             message: "Missing Body requierments",
         })
     } else {
-        SD.deleteOne({ wg_name: req.params.wgID, mb_name: req.params.wgID, "schuld.sd_name": req.body.sd_name }, (error) => {
+        SD.deleteOne({ wg_name: req.params.wgID, mb_name: req.params.mbID, sd_name: req.body.sd_name} , (error) => {
             if (error) {
                 res.status(400).json(error)
                 return
