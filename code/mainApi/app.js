@@ -5,6 +5,7 @@ const connectDB = require('../db/db')
 // resources
 const wgRoutes = require('./resources/wg')
 const mbRoutes = require('./resources/mb')
+const sdRoutes = require('./resources/sd')
 
 
 const app = express()
@@ -13,8 +14,6 @@ app.use(bodyParser.json());
 // DB 
 connectDB()
 
-
-
 // start server
 app.listen(3000, () => {
     console.log("Server running on port 3000");
@@ -22,8 +21,8 @@ app.listen(3000, () => {
 
 // Routes
 app.use('/wg', wgRoutes);
-app.use('/mb', mbRoutes)
-
+app.use('/mb', mbRoutes);
+app.use('/sd', sdRoutes);
 // Starting Page
 
 app.get('/', (req, res) => {

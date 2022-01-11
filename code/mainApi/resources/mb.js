@@ -9,6 +9,20 @@ router.use(bodyParser.urlencoded({ extended: true }))
 // module
 const MB = require('../../db/mbSchema')
 
+
+// alle mitbewohner in Alle WG anzeigen
+// GET localhost:3000/mb/:wgID
+router.get('/', (req, res) => {
+    MB.find({}, (error, data) => {
+        if (error) {
+            res.status(500).json(error)
+            return
+        } else {
+            res.status(200).json(data)
+        }
+    })
+})
+
 // alle mitbewohner in einem WG anzeigen
 // GET localhost:3000/mb/:wgID
 router.get('/:wgID', (req, res) => {

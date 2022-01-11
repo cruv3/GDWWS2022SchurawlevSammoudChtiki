@@ -14,9 +14,10 @@ let sdSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    schulden:{
-        type: Object,
-        required: true 
+    schuld: {
+        sd_name: String,
+        wohlhaber: String,
+        summe:Number
     }
 })
 
