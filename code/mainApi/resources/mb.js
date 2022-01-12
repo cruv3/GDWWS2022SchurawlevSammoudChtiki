@@ -7,7 +7,7 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
 // module
-const MB = require('../../db/mbSchema')
+const MB = require('../db/mbSchema')
 
 
 // alle mitbewohner in Alle WG anzeigen

@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Routes
 const productRoutes = require('./resources/products')
 
+
 app.use('/products', productRoutes)
 
 app.listen(3001, () => {

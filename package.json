@@ -4,8 +4,9 @@
   "description": "WG API",
   "main": "index.js",
   "scripts": {
-    "poc": "node poc/server.js",
-    "api": "node mainApi/app.js"
+    "poc": "node code/poc/server.js",
+    "api": "node code/mainApi/app.js",
+    "start": "node code/mainApi/app.js & node code/fakeApi/fakeApiServer.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "express": "^4.17.2",
     "mongoose": "^6.1.5",
     "node-fetch": "^2.6.6",
+    "postman-request": "^2.88.1-postman.31",
     "request": "^2.88.2"
   }
 }

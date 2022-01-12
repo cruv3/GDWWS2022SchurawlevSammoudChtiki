@@ -8,8 +8,8 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
 // module
-const WG = require('../../db/wgSchema')
-const MB = require('../../db/mbSchema')
+const WG = require('../db/wgSchema')
+const MB = require('../db/mbSchema')
 
 // Alle WGs ausgeben 
 // GET localhost:3000/wg

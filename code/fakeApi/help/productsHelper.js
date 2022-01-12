@@ -1,12 +1,9 @@
 const fs = require('fs')
+const path = '/../db/data.json'
 
-const getProducts = (path) =>{
+const getProducts = () =>{
     return new Promise((resolve, reject)=>{
-        if(path == null){
-            reject(new Error("path is missing"))
-        }
-
-        fs.readFile(path, (err,data)=>{
+        fs.readFile(__dirname + path , (err,data)=>{
             if(err){
                 reject(new Error("could not read file"))
             }
@@ -15,13 +12,13 @@ const getProducts = (path) =>{
     })
 }
 
-const getSpecifigProducts = (path, product) =>{
+const getSpecifigProducts = (product) =>{
     return new Promise((resolve, reject)=>{
         if(path == null){
             reject(new Error("path is missing"))
         }
 
-        fs.readFile(path, (err,data)=>{
+        fs.readFile(__dirname + path , (err,data)=>{
             if(err){
                 reject(new Error("could not read file"))
             }

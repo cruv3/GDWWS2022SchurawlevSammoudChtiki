@@ -1,6 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser")
-const connectDB = require('../db/db')
+const connectDB = require('../mainApi/db/db')
 
 // resources
 const wgRoutes = require('./resources/wg')

@@ -9,9 +9,9 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
 // module
-const WG = require('../../db/wgSchema')
-const MB = require('../../db/mbSchema')
-const SD = require('../../db/sdSchema')
+const WG = require('../db/wgSchema')
+const MB = require('../db/mbSchema')
+const SD = require('../db/sdSchema')
 
 // mitbewohners schulden in einem wg
 // GET localhost:3000/sd/:wgID/:mbID
