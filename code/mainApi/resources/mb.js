@@ -1,65 +1,45 @@
 const express = require('express');
 const bodyParser = require("body-parser")
 const router = express.Router();
-const mainUri = 'localhost:3000'
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
-// module
-const MB = require('../db/mbSchema')
+// functionHelper
+const MB = require('./functions/mbHelper')
 
 
 // alle mitbewohner in Alle WG anzeigen
 // GET localhost:3000/mb/:wgID
 router.get('/', (req, res) => {
-    MB.find({}, (error, data) => {
-        if (error) {
-            res.status(500).json(error)
-            return
-        } else {
-            res.status(200).json(data)
-        }
-    })
+    MB.findMB(undefined)
+        .then(result => res.status(200).json(result))
+        .catch(error => res.status(400).json(error))
 })
 
 // alle mitbewohner in einem WG anzeigen
 // GET localhost:3000/mb/:wgID
 router.get('/:wgID', (req, res) => {
-    MB.find({ "wg_name": req.params.wgID }, (error, data) => {
-        if (error) {
-            res.status(500).json(error)
-            return
-        } else {
-            res.status(200).json(data)
-        }
-    })
+    MB.findMB(req.params.wgID)
+        .then(result => res.status(200).json(result))
+        .catch(error => res.status(400).json(error))
 })
 
 
 // mitbewohner in einem wg hinzufügen
 // POST localhost:3000/mb/:wgID
+// [{mb_name : "test"},{mb_name : "test1"},...]
 router.post('/:wgID', async (req, res) => {
-    if (req.body == "{}" || req.body.mb_name == undefined) {
+    if (req.body[0] == undefined || req.body[0].mb_name == undefined) {
         res.status(400).json({
             message: "Body is empty",
         })
     } else {
-        let mb = new MB()
-        mb.uri = mainUri + '/mitbewohner/' + req.params.wgID + "/" + req.body.mb_name
-        mb.wg_name = req.params.wgID
-        mb.mb_name = req.body.mb_name
-        mb.schulden = []
-        mb.save((error) => {
-            if (error) {
-                res.status(409).json({
-                    status: "mb_name already exist"
-                })
-                return
-            } else {
-                res.status(201).json({ status: "created", mb })
-            }
-        })
+
+        MB.createMB(req.params.wgID, req.body)
+            .then(result => res.status(200).json({ status: "created", result }))
+            .catch(err => res.status(400).json({error : err}))
+
     }
 })
 
@@ -71,39 +51,19 @@ router.put('/:wgID/:mbID', async (req, res) => {
             message: "Body is empty"
         })
     } else {
-        try {
-            let mb = await MB.findOneAndUpdate({ wg_name: req.params.wgID, mb_name: req.params.mbID },
-                {
-                    mb_name: req.body.mb_name
-                })
-        } catch (err) {
-            res.status(400).json({
-                message: err
-            })
-            return
-        } finally {
-            res.status(201).json({ status: "updated" })
-        }
+
+        MB.updateMB(req.params.wgID, req.params.mbID, req.body.mb_name)
+            .then(result => res.status(200).json({ status: "updated", mb_name: result }))
+            .catch(err => res.status(400).json({ error: err }))
     }
 })
 
 //mitbewohner loeschen
 // DELETE localhost:3000/mb/:wgID/:mbID
-router.delete('/:wgID/:mbID', async(req, res) => {
-    if (req.params.wgID == undefined|| req.params.mbID == undefined) {
-        res.status(400).json({
-            message: "params fehlen noch"
-        })
-    }else{
-        try {
-            await MB.deleteOne({ wg_name: req.params.wgID, mb_name: req.params.mbID})
-            res.status(201).json({ status: "deleted" })
-        } catch (err) {
-            res.status(400).json({
-                message: err
-            })
-        }
-    }
+router.delete('/:wgID/:mbID', async (req, res) => {
+    MB.deleteMB(req.params.wgID, req.params.mbID)
+        .then(result => { res.status(200).json({ status: "deleted", mb: result }) })
+        .catch(err => res.status(400).json({ error: err }))
 })
 
 module.exports = [

@@ -5,6 +5,11 @@ let sdSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    mb_name : {
+        type: String,
+        required: true,
+        uniquie: true
+    },
     wg_name : {
         type: String,
         required: true

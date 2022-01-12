@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = '/../db/data.json'
 
+
 const getProducts = () =>{
     return new Promise((resolve, reject)=>{
         fs.readFile(__dirname + path , (err,data)=>{
