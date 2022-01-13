@@ -107,10 +107,11 @@ async function createSD(wgname, body) {
                                         if (obj[fieldIndex].product.toUpperCase().includes(body[i].sd_name.toUpperCase())) {
     
                                             var price = obj[fieldIndex].price.substring(1)
-                                            var newPrice = (parseFloat(price) * rate).toFixed(2)
+                                            var newPrice = Math.round((parseFloat(price) * rate).toFixed(2))
     
                                             sd.summe = parseFloat(newPrice)
                                             console.log(sd)
+
                                             sd.save((error) => {
                                                 if (error) {
                                                     reject(error)
