@@ -32,7 +32,6 @@ async function createWG(wgname) {
         let wg = new WG()
         wg.uri = mainUri + '/wg/' + wgname
         wg.wg_name = wgname
-        wg.bewohner = []
 
         wg.save((error) => {
             if (error) {

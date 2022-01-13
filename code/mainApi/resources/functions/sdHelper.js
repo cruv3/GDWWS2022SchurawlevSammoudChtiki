@@ -41,29 +41,38 @@ async function sumSD(wgname){
                         if(error){
                             reject(error)
                         }else{
-                            
+                            let schuld = []
+                            let endresult = []
                             for(i in data){
-                                
-                                let geteilt = parseFloat( data[i].summe ) / (data[i].schuldner.length + 1)
-                                let schuld = []
-                                
+                                // betrag wird aufgeteilt
+                                let geteilt = Math.round(parseFloat( data[i].summe ) / (data[i].schuldner.length + 1))
+
+                                // durch die schuldner liste durchgehen
                                 for(x in data[i].schuldner){
                                     let name = data[i].schuldner[x]
-                                    if(wgMB[i].toUpperCase() != name.toUpperCase()){
 
-                                        let schuldner = {
-                                            wohlhaber : wgMB[i],
-                                            name: name,
-                                            Schuld : geteilt
-                                        }
+                                    let schuldner = {
+                                        name: name,
+                                        Schuld : geteilt
+                                    }
                                     
-
-                                        schuld.push(schuldner)
+                                    schuld.push([
+                                        data[i].wohlhaber,
+                                        schuldner
+                                    ])
+                                }
+                            }
+                            let summe = 0
+                            for(i in schuld){
+                                console.log(schuld[i])
+                                for(i in wgMB){
+                                    if(schuld[i][1].name == wgMB[i]){
+                                        summe += schuld[i][1].Schuld
                                     }
                                 }
-                                console.log(schuld)
                             }
-
+                            
+                            console.log(summe)
                         }
                     })   
                 }
@@ -79,11 +88,11 @@ async function createSD(wgname, body) {
             if (error) {
                 reject(error)
             } else if (data.length == 0) {
-                reject(`could not find ${wgname} or ${mbname}`)
+                reject(`could not find ${wgname}`)
             } else {
                 for(i in body){
                     let sd = new SD()
-                    sd.uri = mainUri + '/sd/' + body[i].wg_name + "/" + body[i].mb_name + "/" + body[i].sd_name
+                    sd.uri = mainUri + '/sd/' + wgname+ "/" + body[i].wohlhaber + "/" + body[i].sd_name
                     sd.wg_name = wgname
                     sd.sd_name = body[i].sd_name
                     sd.wohlhaber = body[i].wohlhaber
@@ -110,7 +119,7 @@ async function createSD(wgname, body) {
                                             var newPrice = Math.round((parseFloat(price) * rate).toFixed(2))
     
                                             sd.summe = parseFloat(newPrice)
-                                            console.log(sd)
+
 
                                             sd.save((error) => {
                                                 if (error) {

@@ -12,10 +12,6 @@ let mbSchema = mongoose.Schema({
     mb_name : {
         type: String,
         required: true,
-    },
-    schulden: {
-        type: Array,
-        required:true,
     }
 })
 

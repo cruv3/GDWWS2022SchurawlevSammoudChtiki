@@ -42,7 +42,7 @@ async function createMB(wgname, body) {
                     mb.uri = mainUri + '/mitbewohner/' + body[i].wg_name + "/" + body[i].mb_name
                     mb.wg_name = wgname
                     mb.mb_name = body[i].mb_name
-                    mb.schulden = []
+
 
                     mb.save((error) => {
                         if (error) {
