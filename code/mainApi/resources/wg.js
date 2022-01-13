@@ -16,7 +16,6 @@ const WG = require('./functions/wgHelper')
 router.get('/', (req, res) => {
     WG.findWG(undefined)
         .then(result => res.status(200).json({result}))
-        .catch(error => res.status(400).json({error : error}))
 })
 
 // Ein wg mit Namen finden
@@ -24,7 +23,7 @@ router.get('/', (req, res) => {
 router.get('/:wgID', (req, res) => {
     WG.findWG(req.params.wgID)
         .then(result => res.status(200).json({result}))
-        .catch(error => res.status(400).json({error : error}))
+        .catch(error => res.status(404).json({error : error}))
 })
 
 // WG hinzufügen
@@ -36,7 +35,6 @@ router.post('/', (req, res) => {
             message: "Missing Body requierments",
         })
     } else {
-
         WG.createWG(req.body.wg_name)
             .then(result => res.status(201).json({stauts: "created", result}))
             .catch(error => res.status(409).json({status: "wg_name already exist", error: error}))
@@ -55,7 +53,7 @@ router.put('/:wgID', (req, res) => {
 
         WG.updateWG(req.params.wgID,req.body.wg_name)
             .then(result => res.status(200).json({stauts: "updated", result}))
-            .catch(error => res.status(400).json({error: error}))
+            .catch(error => res.status(404).json({error: error}))
     }
 })
 
@@ -63,8 +61,8 @@ router.put('/:wgID', (req, res) => {
 // DELETE localhost:3000/wg/:wgID
 router.delete('/:wgID', (req, res) => {
     WG.deleteWG(req.params.wgID)
-        .then(result => res.status(200).json({status : "deleted", result}))
-        .catch(error => res.status(400).json({error : error}))
+        .then(result => res.status(202).json({status : "deleted", result}))
+        .catch(error => res.status(404).json({error : error}))
 })
 
 

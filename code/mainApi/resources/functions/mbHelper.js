@@ -38,6 +38,7 @@ async function createMB(wgname, body) {
             } else {
                 // if exists create mb
                 for(i in body){
+                    
                     let mb = new MB()
                     mb.uri = mainUri + '/mitbewohner/' + body[i].wg_name + "/" + body[i].mb_name
                     mb.wg_name = wgname

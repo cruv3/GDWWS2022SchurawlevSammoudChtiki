@@ -16,7 +16,7 @@ const SD = require('./functions/sdHelper')
 router.get('/:wgID/:mbID', (req, res) => {
     SD.findSD(req.params.wgID, req.params.mbID)
         .then(result => res.status(200).json(result))
-        .catch(error => res.status(400).json({error: error}))
+        .catch(error => res.status(404).json({error: error}))
 })
 
 // Schuldensumme in dem WG
@@ -24,12 +24,12 @@ router.get('/:wgID/:mbID', (req, res) => {
 router.get('/:wgID', (req,res)=>{
     SD.sumSD(req.params.wgID)
         .then(result => res.status(200).json(result))
-        .catch(error => res.status(400).json(error))
+        .catch(error => res.status(404).json(error))
 })
 
 // add schulden to mitbewohner
 // POST localhost:3000/sd/:wgID
-// 
+
 router.post('/:wgID', (req, res) => {
     if (req.body[0] == undefined || req.body[0].sd_name == undefined, req.body[0].wohlhaber == undefined) {
         res.status(400).json({
@@ -39,7 +39,7 @@ router.post('/:wgID', (req, res) => {
     }else {
         SD.createSD(req.params.wgID,req.body)
             .then(result => res.status(201).json({status : "created", result}))
-            .catch(error => res.status(400).json({error : error}))
+            .catch(error => res.status(404).json({error : error}))
     }
 })
 
@@ -54,8 +54,8 @@ router.delete('/:wgID/:mbID', (req, res) => {
         })
     } else {
         SD.deleteSD(req.params.wgID, req.params.mbID, req.body.sd_name)
-            .then(result => res.status(200).json({status : "deleted", result}))
-            .catch(error => res.status(400).json({error : error}))
+            .then(result => res.status(202).json({status : "deleted", result}))
+            .catch(error => res.status(404).json({error : error}))
     }
 })
 
