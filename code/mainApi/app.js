@@ -3,9 +3,7 @@ const bodyParser = require("body-parser")
 const connectDB = require('../mainApi/db/db')
 
 // resources
-const wgRoutes = require('./resources/wg')
-const mbRoutes = require('./resources/mb')
-const sdRoutes = require('./resources/sd')
+const apiRoute = require('./resources/api')
 
 
 const app = express()
@@ -20,9 +18,8 @@ app.listen(3000, () => {
 })
 
 // Routes
-app.use('/wg', wgRoutes);
-app.use('/mb', mbRoutes);
-app.use('/sd', sdRoutes);
+app.use('/api', apiRoute);
+
 // Starting Page
 
 app.get('/', (req, res) => {

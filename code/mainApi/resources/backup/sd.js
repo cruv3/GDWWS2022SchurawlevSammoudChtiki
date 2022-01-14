@@ -1,9 +1,7 @@
 const express = require('express');
 const bodyParser = require("body-parser")
 const router = express.Router();
-const mainUri = 'localhost:3000'
-const fs = require("fs")
-const fetch = require("node-fetch");
+
 
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))

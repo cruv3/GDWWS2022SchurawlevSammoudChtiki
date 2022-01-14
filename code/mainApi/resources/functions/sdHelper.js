@@ -8,78 +8,40 @@ const WG = require('../../db/wgSchema')
 
 const mainUri = 'localhost:3000'
 
+// functionHelper
+const MB_helper = require('./mbHelper')
+
 async function findSD(wgname, mbname) {
     return new Promise((resolve, reject) => {
-        SD.find({ wg_name: wgname, mb_name: mbname }, (error, data) => {
+        SD.find({ wg_name: wgname, mb_name: mbname }, (error, sdData) => {
             if (error) {
                 reject(error)
-            } else if (data.length == 0) {
-                reject(`could not find ${wgname} or ${mbname}`)
+            } else if (sdData.length == 0) {
+                reject(`could not find ${wgname}, or ${mbname}, or credits`)
             } else {
-                resolve(data)
-            }
-        })
-    })
-}
-
-async function sumSD(wgname) {
-    return new Promise((resolve, reject) => {
-        // get all mb in wg
-        MB.find({ wg_name: wgname }, (error, data) => {
-            if (error) {
-                reject(error)
-            } else if (data.length == 0) {
-                reject(`could not find ${wgname}`)
-            } else {
-                let wgMB = []
-                for (i in data) {
-                    wgMB.push(data[i].mb_name)
-                }
-
-                // go trough the members 
-                for (i in wgMB) {
-                    SD.find({ wg_name: wgname, wohlhaber: wgMB[i] }, (error, data) => {
-                        if (error) {
-                            reject(error)
-                        } else {
-                            let schuld = []
-                            let endresult = []
-                            for (i in data) {
-                                // betrag wird aufgeteilt
-                                let geteilt = Math.round(parseFloat(data[i].summe) / (data[i].schuldner.length + 1))
-
-                                // durch die schuldner liste durchgehen
-                                for (x in data[i].schuldner) {
-                                    let name = data[i].schuldner[x]
-
-                                    let schuldner = {
-                                        name: name,
-                                        Schuld: geteilt
-                                    }
-
-                                    schuld.push([
-                                        data[i].wohlhaber,
-                                        schuldner
-                                    ])
-                                }
+                MB_helper.findMB(wgname)
+                    .then(mbData => {
+                        let schuldenArray = [{}]
+                        for (i = 0; i < mbData.length; i++) {
+                            var summe = 0;
+                            for (j = 0; j < sdData.length; j++) {
+                                if (sdData[j].wohlhaber == mbData[i])
+                                    summe += sdData[j].summe
                             }
-                            let summe = 0
-                            for (i in schuld) {
-                                console.log(schuld[i])
-                                for (i in wgMB) {
-                                    if (schuld[i][1].name == wgMB[i]) {
-                                        summe += schuld[i][1].Schuld
-                                    }
-                                }
-                            }
-                            console.log(summe)
+                            let obj = { schulden_an: mbData[i].mb_name, summe: summe }
+                            schuldenArray[i].push(obj)
+                            console.log(res)
+
                         }
+                        let res = {schuldenArray, sdData}
+                        resolve(res)
                     })
-                }
+                    .catch(error => reject(error))
             }
         })
     })
 }
+
 
 async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
     return new Promise((resolve, reject) => {
@@ -99,7 +61,6 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                             if (!data)
                                 reject(`could not find ${mbname}`)
                             else {
-                                
                                 let sd = new SD()
                                 sd.uri = mainUri + '/sd/' + wgname + "/" + mbname + "/" + sdname
                                 sd.wg_name = wgname
@@ -107,7 +68,6 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                                 sd.sd_name = sdname
                                 sd.wohlhaber = wohlhaber
                                 sd.summe = summe
-
                                 if (summe == undefined) {
                                     //Open Exchange Rate API
                                     // API KEY: d7cafdd25e7d4b7193244ccf6e610329
@@ -128,15 +88,10 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                                                 obj = JSON.parse(data)
                                                 for (i in obj) {
                                                     if (obj[i].product.toUpperCase().includes(sdname.toUpperCase())) {
-
                                                         var price = obj[i].price.substring(1)
                                                         var newPrice = (parseFloat(price) * rate).toFixed(2)
-
                                                         summe = parseFloat(newPrice)
-
                                                         sd.summe = summe
-
-
                                                         sd.save((error) => {
                                                             if (error) {
                                                                 reject(error)
@@ -151,7 +106,6 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                                             reject(err)
                                         })
                                 } else {
-
                                     sd.save((error) => {
                                         if (error) {
                                             reject(error)
@@ -185,7 +139,6 @@ async function deleteSD(wgname, mbname, sdname) {
 
 module.exports = {
     findSD: findSD,
-    sumSD: sumSD,
     createSD: createSD,
     deleteSD: deleteSD
 }

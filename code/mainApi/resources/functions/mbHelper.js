@@ -41,15 +41,13 @@ async function createMB(wgname, mbname) {
                     mb.uri = mainUri + '/mitbewohner/' + wgname+ "/" + mbname
                     mb.wg_name = wgname
                     mb.mb_name = mbname
-
-
                     mb.save((error) => {
                         if (error) {
                             reject(error)
                         }
                     })
 
-                resolve(body)
+                resolve()
             }
         })
     })

@@ -2,8 +2,6 @@ const express = require('express');
 const bodyParser = require("body-parser")
 const router = express.Router();
 
-const mainUri = 'localhost:3000'
-
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: true }))
 
@@ -14,7 +12,7 @@ const WG = require('./functions/wgHelper')
 // Alle WGs ausgeben 
 // GET localhost:3000/wg
 router.get('/', (req, res) => {
-    WG.findWG(undefined)
+    WG.findWG()
         .then(result => res.status(200).json({result}))
         .catch(error => res.status(400).json({error : error}))
 })
