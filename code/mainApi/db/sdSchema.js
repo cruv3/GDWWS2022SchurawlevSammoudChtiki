@@ -9,6 +9,10 @@ let sdSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    mb_name : {
+        type: String,
+        required: true
+    },
     sd_name : {
         type: String,
         required: true
