@@ -29,14 +29,14 @@ async function findSD(wgname, mbname) {
                                     summe += sdData[j].summe
                             }
                             let obj = { schulden_an: mbData[i].mb_name, summe: summe }
-                            schuldenArray[i].push(obj)
-                            console.log(res)
+                            schuldenArray.push(obj) 
 
                         }
                         let res = {schuldenArray, sdData}
+                        console.log(res)
                         resolve(res)
                     })
-                    .catch(error => reject(error))
+                    .catch(error => console.log(error),reject(error))
             }
         })
     })
@@ -86,20 +86,27 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                                             await fs.readFile(__dirname + path, (err, data) => {
                                                 if (err) throw (err)
                                                 obj = JSON.parse(data)
+                                                let found = false
                                                 for (i in obj) {
-                                                    if (obj[i].product.toUpperCase().includes(sdname.toUpperCase())) {
+                                                    if (obj[i].product.toUpperCase() == sdname.toUpperCase()) {
+                                                        found = true
                                                         var price = obj[i].price.substring(1)
                                                         var newPrice = (parseFloat(price) * rate).toFixed(2)
                                                         summe = parseFloat(newPrice)
                                                         sd.summe = summe
+                                              
                                                         sd.save((error) => {
                                                             if (error) {
                                                                 reject(error)
-                                                            } else {
-                                                                resolve(sd)
                                                             }
                                                         })
                                                     }
+                                                }
+                                           
+                                                if(!found){
+                                                    reject(`can't find ${sdname}`)
+                                                }else{
+                                                    resolve(sd)
                                                 }
                                             })
                                         }).catch((err) => {

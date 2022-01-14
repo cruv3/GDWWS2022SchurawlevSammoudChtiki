@@ -16,21 +16,23 @@ const getProducts = () =>{
 const getSpecifigProducts = (product) =>{
     return new Promise((resolve, reject)=>{
         if(path == null){
-            reject(new Error("path is missing"))
+            reject("path is missing")
         }
 
         fs.readFile(__dirname + path , (err,data)=>{
             if(err){
-                reject(new Error("could not read file"))
+                reject(err)
             }
 
             const content = JSON.parse(data)
-            for(i in content.sortiment){
-                if(content.sortiment[i].product== product){
-                    resolve(content.sortiment[i])
+
+            for(i in content){
+                if(content[i].product == product){
+                    resolve(content[i])
                 }
             }
-            reject(new Error("wgname does not exist"))
+
+            reject(`can't find ${product}`)
         })
     })
 }
