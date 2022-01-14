@@ -167,6 +167,14 @@ router.post('/:wgID/:mbID', (req, res) => {
 })
 
 
+let sd = new SD()
+sd.uri = mainUri + '/sd/' + wgname + "/" + mbID+ "/" + sdname
+sd.wg_name = wgname
+sd.mb_name = mbname
+sd.sd_name = sdname
+sd.wohlhaber = wohlhaber
+sd.summe = summe
+
 // delete schulden
 // DELETE localhost:3000/sd/:wgID/:mbID
 // body params: sd_name:String

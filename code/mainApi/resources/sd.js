@@ -29,15 +29,15 @@ router.get('/:wgID', (req,res)=>{
 
 // add schulden to mitbewohner
 // POST localhost:3000/sd/:wgID
-// 
-router.post('/:wgID', (req, res) => {
-    if (req.body[0] == undefined || req.body[0].sd_name == undefined, req.body[0].wohlhaber == undefined) {
+// body params: sd_name:String  wohlhaber:String Summe:Number(Optional)
+router.post('/:wgID/:mbID', (req, res) => {
+    if (req.body.wohlhaber == undefined || req.body.sd_name == undefined) {
         res.status(400).json({
             message: "wohlhaber && sd_name sind notwendig",
             name: req.body.name,
         })
     }else {
-        SD.createSD(req.params.wgID,req.body)
+        SD.createSD(req.params.wgID,req.params.mbID,req.body.sd_name,req.body.wohlhaber,req.body.summe)
             .then(result => res.status(201).json({status : "created", result}))
             .catch(error => res.status(400).json({error : error}))
     }

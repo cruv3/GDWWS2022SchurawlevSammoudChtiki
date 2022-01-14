@@ -3,7 +3,8 @@ const fs = require("fs")
 
 // module
 const SD = require('../../db/sdSchema')
-const MB = require('../../db/mbSchema');
+const MB = require('../../db/mbSchema')
+const WG = require('../../db/wgSchema')
 
 const mainUri = 'localhost:3000'
 
@@ -21,41 +22,41 @@ async function findSD(wgname, mbname) {
     })
 }
 
-async function sumSD(wgname){
-    return new Promise((resolve, reject)=>{
+async function sumSD(wgname) {
+    return new Promise((resolve, reject) => {
         // get all mb in wg
-        MB.find({wg_name : wgname}, (error,data)=>{
-            if(error){
+        MB.find({ wg_name: wgname }, (error, data) => {
+            if (error) {
                 reject(error)
-            }else if(data.length == 0){
+            } else if (data.length == 0) {
                 reject(`could not find ${wgname}`)
-            }else{
+            } else {
                 let wgMB = []
-                for(i in data){
+                for (i in data) {
                     wgMB.push(data[i].mb_name)
                 }
 
                 // go trough the members 
-                for(i in wgMB){
-                    SD.find({wg_name: wgname,wohlhaber : wgMB[i]}, (error,data)=>{
-                        if(error){
+                for (i in wgMB) {
+                    SD.find({ wg_name: wgname, wohlhaber: wgMB[i] }, (error, data) => {
+                        if (error) {
                             reject(error)
-                        }else{
+                        } else {
                             let schuld = []
                             let endresult = []
-                            for(i in data){
+                            for (i in data) {
                                 // betrag wird aufgeteilt
-                                let geteilt = Math.round(parseFloat( data[i].summe ) / (data[i].schuldner.length + 1))
+                                let geteilt = Math.round(parseFloat(data[i].summe) / (data[i].schuldner.length + 1))
 
                                 // durch die schuldner liste durchgehen
-                                for(x in data[i].schuldner){
+                                for (x in data[i].schuldner) {
                                     let name = data[i].schuldner[x]
 
                                     let schuldner = {
                                         name: name,
-                                        Schuld : geteilt
+                                        Schuld: geteilt
                                     }
-                                    
+
                                     schuld.push([
                                         data[i].wohlhaber,
                                         schuldner
@@ -63,97 +64,117 @@ async function sumSD(wgname){
                                 }
                             }
                             let summe = 0
-                            for(i in schuld){
+                            for (i in schuld) {
                                 console.log(schuld[i])
-                                for(i in wgMB){
-                                    if(schuld[i][1].name == wgMB[i]){
+                                for (i in wgMB) {
+                                    if (schuld[i][1].name == wgMB[i]) {
                                         summe += schuld[i][1].Schuld
                                     }
                                 }
                             }
-                            
                             console.log(summe)
                         }
-                    })   
+                    })
                 }
             }
         })
     })
 }
 
-async function createSD(wgname, body) {
+async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
     return new Promise((resolve, reject) => {
-        // check if wg exists
-        WG.find({ wg_name: wgname}, (error, data) => {
+        // Check ob wg existiert
+        WG.findOne({ wg_name: wgname }, (error, data) => {
             if (error) {
                 reject(error)
-            } else if (data.length == 0) {
-                reject(`could not find ${wgname}`)
             } else {
-                for(i in body){
-                    let sd = new SD()
-                    sd.uri = mainUri + '/sd/' + wgname+ "/" + body[i].wohlhaber + "/" + body[i].sd_name
-                    sd.wg_name = wgname
-                    sd.sd_name = body[i].sd_name
-                    sd.wohlhaber = body[i].wohlhaber
-                    sd.schuldner = body[i].schuldner || []
+                if (!data)
+                    reject(`could not find ${wgname}`)
+                else {
+                    //check ob mb existiert
+                    MB.findOne({ mb_name: mbname }, async (error, data) => {
+                        if (error) {
+                            reject(error)
+                        } else {
+                            if (!data)
+                                reject(`could not find ${mbname}`)
+                            else {
+                                
+                                let sd = new SD()
+                                sd.uri = mainUri + '/sd/' + wgname + "/" + mbname + "/" + sdname
+                                sd.wg_name = wgname
+                                sd.mb_name = mbname
+                                sd.sd_name = sdname
+                                sd.wohlhaber = wohlhaber
+                                sd.summe = summe
 
-                    if (body[i].summe == undefined) {
-                        //Open Exchange Rate API
-                        // API KEY: d7cafdd25e7d4b7193244ccf6e610329
-                        let open_exchange_rate_api_key = "d7cafdd25e7d4b7193244ccf6e610329"
-                        let open_exchange_rate_api_request = "https://openexchangerates.org/api/latest.json?app_id=" + open_exchange_rate_api_key
-                        let path = "/../../../poc/prices.json"
-    
-                        fetch(open_exchange_rate_api_request)
-                            .then(response => { return response.json() })
-                            .then(ratesJson => { return ratesJson.rates.EUR })
-                            .then(async (rate) => {
-                                await fs.readFile( __dirname + path, (err, data) => {
-                                    if (err) reject (err)
-                                    obj = JSON.parse(data)
-                                    for (var fieldIndex = 0; fieldIndex < obj.length; fieldIndex++) {
-                                        if (obj[fieldIndex].product.toUpperCase().includes(body[i].sd_name.toUpperCase())) {
-    
-                                            var price = obj[fieldIndex].price.substring(1)
-                                            var newPrice = Math.round((parseFloat(price) * rate).toFixed(2))
-    
-                                            sd.summe = parseFloat(newPrice)
+                                if (summe == undefined) {
+                                    //Open Exchange Rate API
+                                    // API KEY: d7cafdd25e7d4b7193244ccf6e610329
+                                    let open_exchange_rate_api_key = "d7cafdd25e7d4b7193244ccf6e610329"
+                                    let open_exchange_rate_api_request = "https://openexchangerates.org/api/latest.json?app_id=" + open_exchange_rate_api_key
+                                    //fetch request
+                                    await fetch(open_exchange_rate_api_request)
+                                        .then((response) => {
+                                            return response.json();
+                                        })
+                                        .then((ratesJson) => {
+                                            // USD zu EUR
+                                            return ratesJson.rates.EUR
+                                        }).then(async (rate) => {
+                                            let path = "/../../../poc/prices.json"
+                                            await fs.readFile(__dirname + path, (err, data) => {
+                                                if (err) throw (err)
+                                                obj = JSON.parse(data)
+                                                for (i in obj) {
+                                                    if (obj[i].product.toUpperCase().includes(sdname.toUpperCase())) {
+
+                                                        var price = obj[i].price.substring(1)
+                                                        var newPrice = (parseFloat(price) * rate).toFixed(2)
+
+                                                        summe = parseFloat(newPrice)
+
+                                                        sd.summe = summe
 
 
-                                            sd.save((error) => {
-                                                if (error) {
-                                                    reject(error)
+                                                        sd.save((error) => {
+                                                            if (error) {
+                                                                reject(error)
+                                                            } else {
+                                                                resolve(sd)
+                                                            }
+                                                        })
+                                                    }
                                                 }
                                             })
+                                        }).catch((err) => {
+                                            reject(err)
+                                        })
+                                } else {
+
+                                    sd.save((error) => {
+                                        if (error) {
+                                            reject(error)
+                                        } else {
+                                            resolve(sd)
                                         }
-                                    }
-                                })
-                            })
-                            .catch(error => reject(error))
-                    } else {
-    
-                        sd.summe = body[i].summe
-    
-                        sd.save((error) => {
-                            if (error) {
-                                reject(error)
+                                    })
+                                }
                             }
-                        })
-                    }
+                        }
+                    })
                 }
-                resolve(body)
             }
         })
     })
 }
 
-async function deleteSD(wgname,mbname,sdname){
-    return new Promise((resolve, reject)=>{
-        SD.deleteOne({ wg_name: wgname, mb_name: mbname, sd_name: sdname }, (error,data) => {
+async function deleteSD(wgname, mbname, sdname) {
+    return new Promise((resolve, reject) => {
+        SD.deleteOne({ wg_name: wgname, mb_name: mbname, sd_name: sdname }, (error, data) => {
             if (error) {
                 reject(error)
-            }else if(data.deletedCount == 0){
+            } else if (data.deletedCount == 0) {
                 reject(`could not find ${sdname}`)
             } else {
                 resolve(sdname)
@@ -164,7 +185,7 @@ async function deleteSD(wgname,mbname,sdname){
 
 module.exports = {
     findSD: findSD,
-    sumSD : sumSD,
+    sumSD: sumSD,
     createSD: createSD,
-    deleteSD : deleteSD
+    deleteSD: deleteSD
 }

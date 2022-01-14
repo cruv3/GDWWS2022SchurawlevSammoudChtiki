@@ -30,13 +30,13 @@ router.get('/:wgID', (req, res) => {
 // POST localhost:3000/mb/:wgID
 // [{mb_name : "test"},{mb_name : "test1"},...]
 router.post('/:wgID', async (req, res) => {
-    if (req.body[0] == undefined || req.body[0].mb_name == undefined) {
+    if (req.body.mb_name == undefined ) {
         res.status(400).json({
             message: "Body is empty",
         })
     } else {
 
-        MB.createMB(req.params.wgID, req.body)
+        MB.createMB(req.params.wgID, req.body.wg_name)
             .then(result => res.status(200).json({ status: "created", result }))
             .catch(err => res.status(400).json({error : err}))
 

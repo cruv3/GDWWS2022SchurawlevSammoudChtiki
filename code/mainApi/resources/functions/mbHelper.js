@@ -26,7 +26,7 @@ async function findMB(wgname) {
     })
 }
 
-async function createMB(wgname, body) {
+async function createMB(wgname, mbname) {
     return new Promise((resolve, reject) => {
 
         // check if wg exists
@@ -37,11 +37,10 @@ async function createMB(wgname, body) {
                 reject(`could not find ${wgname}`)
             } else {
                 // if exists create mb
-                for(i in body){
                     let mb = new MB()
-                    mb.uri = mainUri + '/mitbewohner/' + body[i].wg_name + "/" + body[i].mb_name
+                    mb.uri = mainUri + '/mitbewohner/' + wgname+ "/" + mbname
                     mb.wg_name = wgname
-                    mb.mb_name = body[i].mb_name
+                    mb.mb_name = mbname
 
 
                     mb.save((error) => {
@@ -49,7 +48,6 @@ async function createMB(wgname, body) {
                             reject(error)
                         }
                     })
-                }
 
                 resolve(body)
             }
