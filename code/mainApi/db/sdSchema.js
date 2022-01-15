@@ -9,21 +9,21 @@ let sdSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    mb_name : {
-       type : String,
-       required : true 
-    },
     sd_name : {
         type: String,
         required: true
     },
-    wohlhaber : {
+    bezahler : {
         type: String,
         required: true
     },
-    summe : {
+    betrag : {
         type: String,
         required: false
+    },
+    profitierer : {
+        type : Array,
+        required : false
     }
 })
 

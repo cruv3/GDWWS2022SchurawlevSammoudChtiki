@@ -151,34 +151,18 @@ router.get('/wg/:wgID/mb/:mbID/sd', (req, res) => {
         .catch(error => res.status(400).json({error: error}))
 })
 
-// add schulden to mitbewohner
-// POST localhost:3000/api/wg/:wgID/mb/:mbID/sd
-// req body: sd_name:String,  wohlhaber:String, Summe:Number(Optional)
-router.post('/wg/:wgID/mb/:mbID/sd', (req, res) => {
-    if (req.body.wohlhaber == undefined || req.body.sd_name == undefined) {
-        res.status(400).json({
-            message: "wohlhaber && sd_name sind notwendig",
-            name: req.body.name,
-        })
-    }else {
-        SD.createSD(req.params.wgID,req.params.mbID,req.body.sd_name,req.body.wohlhaber,req.body.summe)
-            .then(result => res.status(201).json({status : "created", result}))
-            .catch(error => res.status(400).json({error : error}))
-    }
-})
-
 // multi schulden to mitbewohner
 // POST localhost:3000/api/wg/:wgID/mb/:mbID/sd
 // req body: sd_name:String,  wohlhaber:String, Summe:Number(Optional)
-router.post('/wg/:wgID/mb/:mbID/sds', async (req, res) => {
+router.post('/wg/:wgID/mb/:mbID/sd', async (req, res) => {
     let counterCheck = 0
     let added = []
     let errors = []
     // syntax check for everthing inside the body
     for(i in req.body){
-        if (req.body[i].wohlhaber == undefined || req.body[i].sd_name == undefined) {
+        if (req.body[i].bezahler == undefined || req.body[i].sd_name == undefined) {
             res.status(400).json({
-                message: "wohlhaber && sd_name sind notwendig",
+                message: "bezahler && sd_name sind notwendig",
                 at : req.body[i]
             })
         }else{
@@ -188,7 +172,7 @@ router.post('/wg/:wgID/mb/:mbID/sds', async (req, res) => {
     // only start if every syntax inside body is correct
     if(counterCheck == req.body.length){
         for(i in req.body){
-            await SD.createSD(req.params.wgID,req.params.mbID,req.body[i].sd_name,req.body[i].wohlhaber,req.body[i].summe)
+            await SD.createSD(req.params.wgID,req.params.mbID,req.body[i].sd_name,req.body[i].bezahler,req.body[i].betrag,req.body[i].profitierer)
             .then(result => added.push(result))
             .catch(error => errors.push(error))
         }
