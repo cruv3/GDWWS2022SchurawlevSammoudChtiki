@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cruv3/GDWWS2022SchurawlevSammoudChtiki#readme",
   "dependencies": {
+    "dotenv": "^12.0.3",
     "express": "^4.17.2",
     "mongoose": "^6.1.5",
     "node-fetch": "^2.6.6",
