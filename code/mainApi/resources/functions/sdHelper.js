@@ -82,33 +82,20 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                                             // USD zu EUR
                                             return ratesJson.rates.EUR
                                         }).then(async (rate) => {
-                                            let path = "/../../../poc/prices.json"
-                                            await fs.readFile(__dirname + path, (err, data) => {
-                                                if (err) throw (err)
-                                                obj = JSON.parse(data)
-                                                let found = false
-                                                for (i in obj) {
-                                                    if (obj[i].product.toUpperCase() == sdname.toUpperCase()) {
-                                                        found = true
-                                                        var price = obj[i].price.substring(1)
-                                                        var newPrice = (parseFloat(price) * rate).toFixed(2)
-                                                        summe = parseFloat(newPrice)
-                                                        sd.summe = summe
-                                              
-                                                        sd.save((error) => {
-                                                            if (error) {
-                                                                reject(error)
-                                                            }
-                                                        })
-                                                    }
-                                                }
-                                           
-                                                if(!found){
-                                                    reject(`can't find ${sdname}`)
-                                                }else{
-                                                    resolve(sd)
-                                                }
-                                            })
+                                            await fetch('https://fake-price-api.herokuapp.com/api/products/' + sdname)
+                                                .then(response =>{
+                                                    sd.summe = (parseFloat(response.price) * rate).toFixed(2)
+                                                    sd.save((error)=>{
+                                                        if(error){
+                                                            reject(error)
+                                                        }else{
+                                                            resolve(sd)
+                                                        }
+                                                    })     
+                                                })
+                                                .catch(error =>{
+                                                    reject(error)
+                                                })
                                         }).catch((err) => {
                                             reject(err)
                                         })
