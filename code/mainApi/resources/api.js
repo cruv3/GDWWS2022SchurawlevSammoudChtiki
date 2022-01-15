@@ -136,8 +136,8 @@ router.delete('/wg/:wgID/mb/:mbID', async (req, res) => {
 //**************************************************************************************************
 
 // Schuldensumme in dem WG
-// GET localhost:3000/api/wg/:wgID/sd
-router.get('/wg/:wgID/sd', (req,res)=>{
+// GET localhost:3000/api/wg/:wgID/mb/sd
+router.get('/wg/:wgID/mb/sd', (req,res)=>{
     SD.sumSD(req.params.wgID)
         .then(result => res.status(200).json(result))
         .catch(error => res.status(400).json(error))
