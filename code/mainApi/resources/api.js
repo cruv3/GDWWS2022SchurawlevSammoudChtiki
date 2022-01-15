@@ -167,6 +167,39 @@ router.post('/wg/:wgID/mb/:mbID/sd', (req, res) => {
     }
 })
 
+// multi schulden to mitbewohner
+// POST localhost:3000/api/wg/:wgID/mb/:mbID/sd
+// req body: sd_name:String,  wohlhaber:String, Summe:Number(Optional)
+router.post('/wg/:wgID/mb/:mbID/sds', async (req, res) => {
+    let counterCheck = 0
+    let added = []
+    let errors = []
+    // syntax check for everthing inside the body
+    for(i in req.body){
+        if (req.body[i].wohlhaber == undefined || req.body[i].sd_name == undefined) {
+            res.status(400).json({
+                message: "wohlhaber && sd_name sind notwendig",
+                at : req.body[i]
+            })
+        }else{
+            counterCheck++
+        }
+    }
+    // only start if every syntax inside body is correct
+    if(counterCheck == req.body.length){
+        for(i in req.body){
+            await SD.createSD(req.params.wgID,req.params.mbID,req.body[i].sd_name,req.body[i].wohlhaber,req.body[i].summe)
+            .then(result => added.push(result))
+            .catch(error => errors.push(error))
+        }
+        if(errors.length > 0){
+            res.status(201).json({status : "created", added : added, errors : errors})
+        }else{
+            res.status(201).json({status: "created", added:added})
+        }
+    }
+})
+
 // delete schulden
 // DELETE localhost:3000/api/wg/:wgID/mb/:mbID/sd/:sdID
 router.delete('/wg/:wgID/mb/:mbID/sd/:sdID', (req, res) => {

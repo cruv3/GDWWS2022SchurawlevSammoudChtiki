@@ -54,12 +54,12 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                     reject(`could not find ${wgname}`)
                 else {
                     //check ob mb existiert
-                    MB.findOne({ mb_name: mbname }, async (error, data) => {
+                    MB.findOne({ mb_name: wohlhaber }, async (error, data) => {
                         if (error) {
                             reject(error)
                         } else {
                             if (!data)
-                                reject(`could not find ${mbname}`)
+                                reject(`could not find ${wohlhaber}, for ${sdname}`)
                             else {
                                 let sd = new SD()
                                 sd.uri = mainUri + '/sd/' + wgname + "/" + mbname + "/" + sdname
@@ -74,6 +74,7 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                                     let open_exchange_rate_api_key = process.env.API_KEY
                                     let open_exchange_rate_api_request = "https://openexchangerates.org/api/latest.json?app_id=" + open_exchange_rate_api_key
                                     //fetch request
+                                    
                                     await fetch(open_exchange_rate_api_request)
                                         .then((response) => {
                                             return response.json();
@@ -83,18 +84,20 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                                             return ratesJson.rates.EUR
                                         }).then(async (rate) => {
                                             await fetch('https://fake-price-api.herokuapp.com/api/products/' + sdname)
-                                                .then(response =>{
-                                                    sd.summe = (parseFloat(response.price) * rate).toFixed(2)
+                                                .then(response =>{ return response.json()})
+                                                .then(product => {
+                                                    let price = parseFloat(product.price.replace(/\$|,/g, ''))
+                                                    sd.summe = (price * rate).toFixed(2)
                                                     sd.save((error)=>{
                                                         if(error){
                                                             reject(error)
                                                         }else{
                                                             resolve(sd)
                                                         }
-                                                    })     
+                                                    })
                                                 })
                                                 .catch(error =>{
-                                                    reject(error)
+                                                    reject(`api does not have ${sdname}`)
                                                 })
                                         }).catch((err) => {
                                             reject(err)
