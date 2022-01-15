@@ -4,9 +4,7 @@
   "description": "WG API",
   "main": "index.js",
   "scripts": {
-    "poc": "node code/poc/server.js",
-    "api": "node code/mainApi/app.js",
-    "start": "node code/fakeApi/fakeApiServer.js"
+    "start": "node fakeApi/fakeApiServer.js"
   },
   "repository": {
     "type": "git",

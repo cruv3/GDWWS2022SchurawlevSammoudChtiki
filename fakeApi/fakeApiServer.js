@@ -1,6 +1,8 @@
 const express = require("express")
 const bodyParser = require('body-parser')
-const fs = require('fs')
+const dotenv = require('dotenv')
+// Load config
+dotenv.config()
 
 const app = express()
 
@@ -11,10 +13,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const productRoutes = require('./resources/products')
 
 
-app.use('/products', productRoutes)
+app.use('/api/products', productRoutes)
 
-app.listen(3001, () => {
- console.log("Server running on port 3001");
+// start server
+const PORT = process.env.PORT1 || 3001
+app.listen( PORT, () => {
+    console.log("Server running on port " + PORT);
 });
 
 app.get('/', (req, res) => {
