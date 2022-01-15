@@ -6,7 +6,7 @@ const getProducts = () =>{
     return new Promise((resolve, reject)=>{
         fs.readFile(__dirname + path , (err,data)=>{
             if(err){
-                reject(new Error("could not read file"))
+                reject("could not read file")
             }
             resolve(JSON.parse(data))
         })
