@@ -71,7 +71,7 @@ async function createSD(wgname, mbname, sdname, wohlhaber, summe) {
                                 if (summe == undefined) {
                                     //Open Exchange Rate API
                                     // API KEY: d7cafdd25e7d4b7193244ccf6e610329
-                                    let open_exchange_rate_api_key = "d7cafdd25e7d4b7193244ccf6e610329"
+                                    let open_exchange_rate_api_key = process.env.API_KEY
                                     let open_exchange_rate_api_request = "https://openexchangerates.org/api/latest.json?app_id=" + open_exchange_rate_api_key
                                     //fetch request
                                     await fetch(open_exchange_rate_api_request)

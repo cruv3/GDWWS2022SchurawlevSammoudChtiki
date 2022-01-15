@@ -6,6 +6,7 @@
   "scripts": {
     "poc": "node code/poc/server.js",
     "api": "node code/mainApi/app.js",
+    "fakeapi": "node code/fakeApi/fakeApiServer.js",
     "start": "node code/mainApi/app.js & node code/fakeApi/fakeApiServer.js"
   },
   "repository": {
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/cruv3/GDWWS2022SchurawlevSammoudChtiki#readme",
   "dependencies": {
+    "dotenv": "^12.0.3",
     "express": "^4.17.2",
     "mongoose": "^6.1.5",
     "node-fetch": "^2.6.6",

@@ -1,10 +1,11 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const connectDB = require('../mainApi/db/db')
-
+const dotenv = require('dotenv')
+// Load config
+dotenv.config()
 // resources
 const apiRoute = require('./resources/api')
-
 
 const app = express()
 app.use(bodyParser.json());
@@ -13,8 +14,9 @@ app.use(bodyParser.json());
 connectDB()
 
 // start server
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
+const PORT = process.env.PORT2 || 3000
+app.listen( PORT, () => {
+    console.log("Server running on port " + PORT);
 })
 
 // Routes
