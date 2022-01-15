@@ -16,7 +16,7 @@ const productRoutes = require('./resources/products')
 app.use('/api/products', productRoutes)
 
 // start server
-const PORT = process.env.PORT1 || 3001
+const PORT = process.env.PORT || 3000
 app.listen( PORT, () => {
     console.log("Server running on port " + PORT);
 });
