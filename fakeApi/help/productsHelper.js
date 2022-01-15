@@ -27,7 +27,7 @@ const getSpecifigProducts = (product) =>{
             const content = JSON.parse(data)
 
             for(i in content){
-                if(content[i].product == product){
+                if(content[i].product.toUpperCase() == product.toUpperCase()){
                     resolve(content[i])
                 }
             }

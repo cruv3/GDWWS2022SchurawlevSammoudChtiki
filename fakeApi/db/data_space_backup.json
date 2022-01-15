@@ -1,22 +1,22 @@
 [
     {
-        "product": "AluminumFoil",
+        "product": "Aluminum Foil",
         "price": "$2.49"
     },
     {
-        "product": "AppleJuice",
+        "product": "Apple Juice",
         "price": "$1.50"
     },
     {
-        "product": "AppleSauce",
+        "product": "Apple Sauce",
         "price": "$2.89"
     },
     {
-        "product": "Apples,Gala,bag",
+        "product": "Apples, Gala, bag",
         "price": "$5.79"
     },
     {
-        "product": "Apples,Red/GoldenDelicious(and/orother),bag",
+        "product": "Apples, Red/Golden Delicious (and/or other), bag",
         "price": "$3.99"
     },
     {
@@ -24,135 +24,135 @@
         "price": "$3.79"
     },
     {
-        "product": "Bagles,plain",
+        "product": "Bagles, plain",
         "price": "$2.19"
     },
     {
-        "product": "BaguetteRolls,frozen",
+        "product": "Baguette Rolls, frozen",
         "price": "$4.19"
     },
     {
-        "product": "Baguette/FrenchBread",
+        "product": "Baguette/French Bread",
         "price": "$1.50"
     },
     {
-        "product": "BarbequeSauce",
+        "product": "Barbeque Sauce",
         "price": "$1.00"
     },
     {
-        "product": "BeefStewMeat",
+        "product": "Beef Stew Meat",
         "price": "$2.74"
     },
     {
-        "product": "Beer,bottle,pilsener,import",
+        "product": "Beer, bottle, pilsener, import",
         "price": "$8.99"
     },
     {
-        "product": "Beer,cans",
+        "product": "Beer, cans",
         "price": "$23.49"
     },
     {
-        "product": "Brats,4-6pack",
+        "product": "Brats, 4-6 pack",
         "price": "$2.59"
     },
     {
-        "product": "BreadCrumbs",
+        "product": "Bread Crumbs",
         "price": "$1.47"
     },
     {
-        "product": "Bread,12-grain/multi-grain",
+        "product": "Bread, 12-grain/multi-grain",
         "price": "$4.29"
     },
     {
-        "product": "BreakfastSausage,frozen",
+        "product": "Breakfast Sausage, frozen",
         "price": "$1.99"
     },
     {
-        "product": "Butter,real,unsalted/salted",
+        "product": "Butter, real, unsalted/salted",
         "price": "$2.69"
     },
     {
-        "product": "Carrots,whole",
+        "product": "Carrots, whole",
         "price": "$0.99"
     },
     {
-        "product": "Cereal,Müslistyle",
+        "product": "Cereal, Müsli style",
         "price": "$2.67"
     },
     {
-        "product": "CheeryPieFilling",
+        "product": "Cheery Pie Filling",
         "price": "$3.99"
     },
     {
-        "product": "CheeseSingles(imitation)",
+        "product": "Cheese Singles (imitation)",
         "price": "$3.59"
     },
     {
-        "product": "Cheese,block(regular)",
+        "product": "Cheese, block (regular)",
         "price": "$3.29"
     },
     {
-        "product": "Cheese,Boursin",
+        "product": "Cheese, Boursin",
         "price": "$5.99"
     },
     {
-        "product": "Cheese,Brie1",
+        "product": "Cheese, Brie 1",
         "price": "$4.79"
     },
     {
-        "product": "Cheese,Brie2",
+        "product": "Cheese, Brie 2",
         "price": "$5.99"
     },
     {
-        "product": "Cheese,Parmesan,jar",
+        "product": "Cheese, Parmesan, jar",
         "price": "$2.19"
     },
     {
-        "product": "Cheese,shredded,Mexicanstyle",
+        "product": "Cheese, shredded, Mexican style",
         "price": "$8.99"
     },
     {
-        "product": "Cheese,shredded,Mozarella",
+        "product": "Cheese, shredded, Mozarella",
         "price": "$1.50"
     },
     {
-        "product": "Cheese,sliced,deli",
+        "product": "Cheese, sliced, deli",
         "price": "$4.38"
     },
     {
-        "product": "Cheese,sliced,regular",
+        "product": "Cheese, sliced, regular",
         "price": "$2.69"
     },
     {
-        "product": "Cheese,wedge,deli",
+        "product": "Cheese, wedge, deli",
         "price": "$6.99"
     },
     {
-        "product": "ChickenBreasts,frozen",
+        "product": "Chicken Breasts, frozen",
         "price": "$8.99"
     },
     {
-        "product": "ChickenNuggets,frozen",
+        "product": "Chicken Nuggets, frozen",
         "price": "$3.79"
     },
     {
-        "product": "ChickenTenderloins,frozen",
+        "product": "Chicken Tenderloins, frozen",
         "price": "$8.99"
     },
     {
-        "product": "Chips,potatochips",
+        "product": "Chips, potato chips",
         "price": "$2.99"
     },
     {
-        "product": "ChocolateChipCookieDough",
+        "product": "Chocolate Chip Cookie Dough",
         "price": "$2.19"
     },
     {
-        "product": "CocoaRiceCereal",
+        "product": "Cocoa Rice Cereal",
         "price": "$1.99"
     },
     {
-        "product": "CoconutMilk",
+        "product": "Coconut Milk",
         "price": "$2.29"
     },
     {
@@ -160,127 +160,127 @@
         "price": "$4.19"
     },
     {
-        "product": "ColdCuts,hamorchicken",
+        "product": "Cold Cuts, ham or chicken",
         "price": "$3.79"
     },
     {
-        "product": "ColdCuts,turkeyvariety",
+        "product": "Cold Cuts, turkey variety",
         "price": "$3.69"
     },
     {
-        "product": "CornFlakes,regular",
+        "product": "Corn Flakes, regular",
         "price": "$0.99"
     },
     {
-        "product": "CornFlakes,sugarfrosted",
+        "product": "Corn Flakes, sugar frosted",
         "price": "$1.25"
     },
     {
-        "product": "CottageCheese",
+        "product": "Cottage Cheese",
         "price": "$1.69"
     },
     {
-        "product": "CreamCheese",
+        "product": "Cream Cheese",
         "price": "$1.00"
     },
     {
-        "product": "Cream,heavywhipping",
+        "product": "Cream, heavy whipping",
         "price": "$2.39"
     },
     {
-        "product": "Croissants,$2.49,10oz,,\"L'ovenFresh"
+        "product": "Croissants,$2.49,10 oz,,\"L'oven Fresh"
     },
     {
-        "product": "10ct"
+        "product": "10 ct"
     },
     {
-        "product": "minicroissants,<fontclass=\"\"font8\"\">FROZENONLY</font>\"",
+        "product": "mini croissants, <font class=\"\"font8\"\">FROZEN ONLY</font>\"",
         "price": "$3.00"
     },
     {
-        "product": "Eggs,cagefree",
+        "product": "Eggs, cage free",
         "price": "$2.19"
     },
     {
-        "product": "Eggs,regular",
+        "product": "Eggs, regular",
         "price": "$1.89"
     },
     {
-        "product": "Fish1,frozen(flounder)",
+        "product": "Fish 1, frozen (flounder)",
         "price": "$5.99"
     },
     {
-        "product": "Fish2,frozen(tilapia)",
+        "product": "Fish 2, frozen (tilapia)",
         "price": "$5.99"
     },
     {
-        "product": "\"Fish3"
+        "product": "\"Fish 3"
     },
     {
-        "product": "(mahimahiand/orother)\"",
+        "product": "(mahi mahi and/or other)\"",
         "price": "$9.99"
     },
     {
-        "product": "Flour,allpurpose",
+        "product": "Flour, all purpose",
         "price": "$2.79"
     },
     {
-        "product": "Flour,selfrising",
+        "product": "Flour, self rising",
         "price": "$2.79"
     },
     {
-        "product": "FrenchFries,frozen",
+        "product": "French Fries, frozen",
         "price": "$1.99"
     },
     {
-        "product": "Fruit1,frozen(strawberries)",
+        "product": "Fruit 1, frozen (strawberries)",
         "price": "$2.99"
     },
     {
-        "product": "\"Fruit2"
+        "product": "\"Fruit 2"
     },
     {
-        "product": "(cherriesand/orother)\"",
+        "product": "(cherries and/or other)\"",
         "price": "$4.59"
     },
     {
-        "product": "GranolaBars,highfiber",
+        "product": "Granola Bars, high fiber",
         "price": "$2.39"
     },
     {
-        "product": "GranolaBars,regular",
+        "product": "Granola Bars, regular",
         "price": "$2.39"
     },
     {
-        "product": "Grapes,red",
+        "product": "Grapes, red",
         "price": "$1.99"
     },
     {
-        "product": "GreenBeans,canned",
+        "product": "Green Beans, canned",
         "price": "$0.69"
     },
     {
-        "product": "GroundBeef(chuck,80/20)",
+        "product": "Ground Beef (chuck, 80/20)",
         "price": "$2.79"
     },
     {
-        "product": "GroundBeef(sirloin,90/10)",
+        "product": "Ground Beef (sirloin, 90/10)",
         "price": "$4.59"
     },
     {
-        "product": "GroundBeef,frozen",
+        "product": "Ground Beef, frozen",
         "price": "$10.99"
     },
     {
-        "product": "GroundTurkey",
+        "product": "Ground Turkey",
         "price": "$2.26"
     },
     {
-        "product": "GroundTurkey,frozen",
+        "product": "Ground Turkey, frozen",
         "price": "$4.99"
     },
     {
-        "product": "Ham,boneless",
+        "product": "Ham, boneless",
         "price": "$6.39"
     },
     {
@@ -288,27 +288,27 @@
         "price": "$5.78"
     },
     {
-        "product": "HoneyCrunchOats",
+        "product": "Honey Crunch Oats",
         "price": "$2.49"
     },
     {
-        "product": "HotDogBuns",
+        "product": "Hot Dog Buns",
         "price": "$1.39"
     },
     {
-        "product": "HotDogs,beef",
+        "product": "Hot Dogs, beef",
         "price": "$5.29"
     },
     {
-        "product": "IceCream,premium",
+        "product": "Ice Cream, premium",
         "price": "$5.49"
     },
     {
-        "product": "IceCream,simple",
+        "product": "Ice Cream, simple",
         "price": "$1.50"
     },
     {
-        "product": "JalopeñoPeppers,canned",
+        "product": "Jalopeño Peppers, canned",
         "price": "$1.34"
     },
     {
@@ -324,11 +324,11 @@
         "price": "$3.49"
     },
     {
-        "product": "Lettuce,iceberg",
+        "product": "Lettuce, iceberg",
         "price": "$1.25"
     },
     {
-        "product": "MandarinOranges,canned",
+        "product": "Mandarin Oranges, canned",
         "price": "$1.00"
     },
     {
@@ -344,27 +344,27 @@
         "price": "$3.19"
     },
     {
-        "product": "MilkChocolateBar",
+        "product": "Milk Chocolate Bar",
         "price": "$2.49"
     },
     {
-        "product": "Milk,organic",
+        "product": "Milk, organic",
         "price": "$3.79"
     },
     {
-        "product": "Mushrooms,Button,whole",
+        "product": "Mushrooms, Button, whole",
         "price": "$1.99"
     },
     {
-        "product": "Mushrooms,stems/pieces",
+        "product": "Mushrooms, stems/pieces",
         "price": "$0.99"
     },
     {
-        "product": "Mustard,dijon",
+        "product": "Mustard, dijon",
         "price": "$1.49"
     },
     {
-        "product": "Mustard,yellow",
+        "product": "Mustard, yellow",
         "price": "$1.49"
     },
     {
@@ -372,27 +372,27 @@
         "price": "$3.99"
     },
     {
-        "product": "OatMeal",
+        "product": "Oat Meal",
         "price": "$1.50"
     },
     {
-        "product": "Oil,Canola,100%pure",
+        "product": "Oil, Canola, 100% pure",
         "price": "$2.99"
     },
     {
-        "product": "Oil,Olive,100%pure",
+        "product": "Oil, Olive, 100% pure",
         "price": "$7.89"
     },
     {
-        "product": "Oil,Olive,extravirgin",
+        "product": "Oil, Olive, extra virgin",
         "price": "$8.29"
     },
     {
-        "product": "Onions,yellow",
+        "product": "Onions, yellow",
         "price": "$2.29"
     },
     {
-        "product": "OrangeJuice,notfromconcentrate",
+        "product": "Orange Juice, not from concentrate",
         "price": "$3.49"
     },
     {
@@ -400,42 +400,42 @@
         "price": "$6.99"
     },
     {
-        "product": "PancettaorHam,diced",
+        "product": "Pancetta or Ham, diced",
         "price": "$5.79"
     },
     {
-        "product": "PaperTowles,$5.99,8rolls,,\"Boulder"
+        "product": "Paper Towles,$5.99,8 rolls,,\"Boulder"
     },
     {
-        "product": "60sheets\"",
+        "product": "60 sheets\"",
         "price": ""
     },
     {
-        "product": "Pasta,EggNoodles",
+        "product": "Pasta, Egg Noodles",
         "price": "$1.50"
     },
     {
-        "product": "Pasta,EllbowMaccaroni",
+        "product": "Pasta, Ellbow Maccaroni",
         "price": "$0.88"
     },
     {
-        "product": "Pasta,PenneRigate",
+        "product": "Pasta, Penne Rigate",
         "price": "$1.39"
     },
     {
-        "product": "Pasta,Rotini/Rotelle/Fusilli",
+        "product": "Pasta, Rotini/Rotelle/Fusilli",
         "price": "$1.39"
     },
     {
-        "product": "Pasta,Spaghetti",
+        "product": "Pasta, Spaghetti",
         "price": "$0.88"
     },
     {
-        "product": "PeanutButter",
+        "product": "Peanut Butter",
         "price": "$2.79"
     },
     {
-        "product": "Peanuts,roasted",
+        "product": "Peanuts, roasted",
         "price": "$2.64"
     },
     {
@@ -443,43 +443,43 @@
         "price": "$1.39"
     },
     {
-        "product": "Pepper,black,ground",
+        "product": "Pepper, black, ground",
         "price": "$3.99"
     },
     {
-        "product": "PizzaDough",
+        "product": "Pizza Dough",
         "price": "$2.99"
     },
     {
-        "product": "Pizza,frozen(premium)",
+        "product": "Pizza, frozen (premium)",
         "price": "$3.67"
     },
     {
-        "product": "Pizza,frozen(simple)",
+        "product": "Pizza, frozen (simple)",
         "price": "$2.99"
     },
     {
-        "product": "PlasticWrap",
+        "product": "Plastic Wrap",
         "price": "$1.99"
     },
     {
-        "product": "PorkTenderloin,small",
+        "product": "Pork Tenderloin, small",
         "price": "$4.27"
     },
     {
-        "product": "Potatoes,gold(Yukon)",
+        "product": "Potatoes, gold (Yukon)",
         "price": "$5.99"
     },
     {
-        "product": "Potatoes,red",
+        "product": "Potatoes, red",
         "price": "$3.49"
     },
     {
-        "product": "Potatoes,Russet<spanstyle=\"\"mso-spacerun:yes\"\"></span>",
+        "product": "Potatoes, Russet<span style=\"\"mso-spacerun:yes\"\"> </span>",
         "price": "$3.29"
     },
     {
-        "product": "Preserves,strawberry",
+        "product": "Preserves, strawberry",
         "price": "$2.49"
     },
     {
@@ -487,197 +487,199 @@
         "price": "$1.67"
     },
     {
-        "product": "RedCabbage",
+        "product": "Red Cabbage",
         "price": "$1.79"
     },
     {
-        "product": "Ribs,BabyBack(pork,unseasoned)",
+        "product": "Ribs, Baby Back (pork, unseasoned)",
         "price": "$3.99"
     },
     {
-        "product": "Ribs,SpareBack(pork,unseasoned)",
+        "product": "Ribs, Spare Back (pork, unseasoned)",
         "price": "$2.99"
     },
     {
-        "product": "Rice,instant,white",
+        "product": "Rice, instant, white",
         "price": "$1.49"
     },
     {
-        "product": "Rice,regular",
+        "product": "Rice, regular",
         "price": "$2.98"
     },
     {
-        "product": "SaladDressing",
+        "product": "Salad Dressing",
         "price": "$1.67"
     },
     {
-        "product": "Salami,sliced",
+        "product": "Salami, sliced",
         "price": "$2.74"
     },
     {
-        "product": "Salami,whole(1)",
+        "product": "Salami, whole (1)",
         "price": "$8.99"
     },
     {
-        "product": "Salami,whole(2)",
+        "product": "Salami, whole (2)",
         "price": "$7.99"
     },
     {
-        "product": "Salsa,medium",
+        "product": "Salsa, medium",
         "price": "$2.69"
     },
     {
-        "product": "Salt,iodized",
+        "product": "Salt, iodized",
         "price": "$0.47"
     },
     {
-        "product": "Soda,bottle",
+        "product": "Soda, bottle",
         "price": "$0.88"
     },
     {
-        "product": "Soda,bottle(Cokeproduct)",
+        "product": "Soda, bottle (Coke product)",
         "price": "$1.67"
     },
     {
-        "product": "Soda,can",
+        "product": "Soda, can",
         "price": "$2.77"
     },
     {
-        "product": "Soda,can(Cokeproduct)",
+        "product": "Soda, can (Coke product)",
         "price": "$4.99"
     },
     {
-        "product": "Soup,ChickenNoodle,condensed",
+        "product": "Soup, Chicken Noodle, condensed",
         "price": "$0.67"
     },
     {
-        "product": "Soup,ChickenNoodle,regular",
+        "product": "Soup, Chicken Noodle, regular",
         "price": "$1.87"
     },
     {
-        "product": "Soup,organic",
+        "product": "Soup, organic",
         "price": "$2.98"
     },
     {
-        "product": "Soup,Tomato,condensed",
+        "product": "Soup, Tomato, condensed",
         "price": "$1.09"
     },
     {
-        "product": "Soup,Tomato,regular",
+        "product": "Soup, Tomato, regular",
         "price": "$2.07"
     },
     {
-        "product": "SourCream",
+        "product": "Sour Cream",
         "price": "$1.54"
     },
     {
-        "product": "SpaghettiSauce",
+        "product": "Spaghetti Sauce",
         "price": "$1.27"
     },
     {
-        "product": "Sugar,brown",
+        "product": "Sugar, brown",
         "price": "$2.19"
     },
     {
-        "product": "Sugar,powdered",
+        "product": "Sugar, powdered",
         "price": "$2.19"
     },
     {
-        "product": "Sugar,white",
+        "product": "Sugar, white",
         "price": "$2.58"
     },
     {
-        "product": "Syrup,breakfast",
+        "product": "Syrup, breakfast",
         "price": "$1.98"
     },
     {
-        "product": "Tea,green,bags",
+        "product": "Tea, green, bags",
         "price": "$2.49"
     },
     {
-        "product": "TomatoPaste",
+        "product": "Tomato Paste",
         "price": "$0.59"
     },
     {
-        "product": "TomatoSauce",
+        "product": "Tomato Sauce",
         "price": "$0.33"
     },
     {
-        "product": "Tomatoes,slicer",
+        "product": "Tomatoes, slicer",
         "price": "$1.99"
     },
     {
-        "product": "Tuna,chunky,inwater",
+        "product": "Tuna, chunky, in water",
         "price": "$0.75"
     },
     {
-        "product": "Tuna,solid,inwater",
+        "product": "Tuna, solid, in water",
         "price": "$1.99"
     },
     {
-        "product": "VanillaExtract,pure(notimitation)",
+        "product": "Vanilla Extract, pure (not imitation)",
         "price": "$6.99"
     },
     {
-        "product": "Veggies1,frozen(peas)",
+        "product": "Veggies 1, frozen (peas)",
         "price": "$2.48"
     },
     {
-        "product": "Veggies2,frozen(other)",
+        "product": "Veggies 2, frozen (other)",
         "price": "$1.49"
     },
     {
-        "product": "Waffles,frozen",
+        "product": "Waffles, frozen",
         "price": "$1.89"
     },
     {
-        "product": "Water,regular/drinking",
+        "product": "Water, regular/drinking",
         "price": "$0.59"
     },
     {
-        "product": "Water,Sparkling/Mineral",
+        "product": "Water, Sparkling/Mineral",
         "price": "$1.69"
     },
     {
-        "product": "WhiteBread/Toast,enriched",
+        "product": "White Bread/Toast, enriched",
         "price": "$0.88"
     },
     {
-        "product": "Wine,table,Cabernet",
+        "product": "Wine, table, Cabernet",
         "price": "$6.99"
     },
     {
-        "product": "Wine,table,Chardonnay",
+        "product": "Wine, table, Chardonnay",
         "price": "$6.99"
     },
     {
-        "product": "Wine,table,WhiteZinfandel",
+        "product": "Wine, table, White Zinfandel",
         "price": "$7.49"
     },
     {
-        "product": "Yoghurt,Dannon(etc.)",
+        "product": "Yoghurt, Dannon (etc.)",
         "price": "$2.38"
     },
     {
-        "product": "Yogurt,Fage,2%,plain",
+        "product": "Yogurt, Fage, 2%, plain",
         "price": "$1.69"
     },
     {
-        "product": "Yogurt,Fage,w/flavor",
+        "product": "Yogurt, Fage, w/ flavor",
         "price": "$1.69"
     },
     {
-        "product": "Yogurt,flavored,cup",
+        "product": "Yogurt, flavored, cup",
         "price": "$0.40"
     },
     {
-        "product": "Yogurt,greekstyle,plain",
+        "product": "Yogurt, greek style, plain",
         "price": "$1.29"
     },
     {
-        "product": "Yogurt,plain",
+        "product": "Yogurt, plain",
         "price": "$1.99"
     },
+
+
     {
         "Produkt": "Aluminium-Folie",
         "price": "$2.49"
@@ -691,11 +693,11 @@
         "preis": "$2.89"
     },
     {
-        "Produkt": "Äpfel,Gala,Beutel",
+        "Produkt": "Äpfel, Gala, Beutel",
         "Preis": "$5.79"
     },
     {
-        "Produkt": "Äpfel,Red/GoldenDelicious(und/oderandere),Beutel",
+        "Produkt": "Äpfel, Red/Golden Delicious (und/oder andere), Beutel",
         "price": "$3.99"
     },
     {
@@ -703,15 +705,15 @@
         "price": "$3.79"
     },
     {
-        "Produkt": "Bagles,einfach",
+        "Produkt": "Bagles, einfach",
         "price": "$2.19"
     },
     {
-        "Produkt": "Baguette-Brötchen,gefroren",
+        "Produkt": "Baguette-Brötchen, gefroren",
         "price": "$4.19"
     },
     {
-        "Produkt": "Baguette/FrenchBread",
+        "Produkt": "Baguette/French Bread",
         "price": "$1.50"
     },
     {
@@ -723,15 +725,15 @@
         "price": "$2.74"
     },
     {
-        "product": "Bier,Flasche,Pilsener,Import",
+        "product": "Bier, Flasche, Pilsener, Import",
         "price": "$8.99"
     },
     {
-        "Produkt": "Bier,Dosen",
+        "Produkt": "Bier, Dosen",
         "price": "$23.49"
     },
     {
-        "Produkt": "Bratwürste,4-6erPack",
+        "Produkt": "Bratwürste, 4-6er Pack",
         "price": "$2.59"
     },
     {
@@ -739,91 +741,91 @@
         "price": "$1.47"
     },
     {
-        "Produkt": "Brot,12-Korn/Mehrkorn",
+        "Produkt": "Brot, 12-Korn/Mehrkorn",
         "Preis": "$4.29"
     },
     {
-        "Produkt": "Frühstückswurst,gefroren",
+        "Produkt": "Frühstückswurst, gefroren",
         "price": "$1.99"
     },
     {
-        "Produkt": "Butter,echt,ungesalzen/gesalzen",
+        "Produkt": "Butter, echt, ungesalzen/gesalzen",
         "price": "$2.69"
     },
     {
-        "Produkt": "Karotten,ganz",
+        "Produkt": "Karotten, ganz",
         "price": "$0.99"
     },
     {
-        "Produkt": "Müsli,ArtMüsli",
+        "Produkt": "Müsli, Art Müsli",
         "price": "$2.67"
     },
     {
-        "Produkt": "CheeryPieFilling",
+        "Produkt": "Cheery Pie Filling",
         "price": "$3.99"
     },
     {
-        "Produkt": "CheeseSingles(Imitation)",
+        "Produkt": "Cheese Singles (Imitation)",
         "price": "$3.59"
     },
     {
-        "Produkt": "Käse,Block(normal)",
+        "Produkt": "Käse, Block (normal)",
         "Preis": "$3.29"
     },
     {
-        "Produkt": "Käse,Boursin",
+        "Produkt": "Käse, Boursin",
         "price": "$5.99"
     },
     {
-        "Produkt": "Käse,Brie1",
+        "Produkt": "Käse, Brie 1",
         "price": "$4.79"
     },
     {
-        "Produkt": "Käse,Brie2",
+        "Produkt": "Käse, Brie 2",
         "price": "$5.99"
     },
     {
-        "Produkt": "Käse,Parmesan,Glas",
+        "Produkt": "Käse, Parmesan, Glas",
         "price": "$2.19"
     },
     {
-        "Produkt": "Käse,geraspelt,mexikanischeArt",
+        "Produkt": "Käse, geraspelt, mexikanische Art",
         "Preis": "$8.99"
     },
     {
-        "Produkt": "Käse,zerkleinert,Mozarella",
+        "Produkt": "Käse, zerkleinert, Mozarella",
         "price": "$1.50"
     },
     {
-        "Produkt": "Käse,inScheibengeschnitten,Feinkost",
+        "Produkt": "Käse, in Scheiben geschnitten, Feinkost",
         "price": "$4.38"
     },
     {
-        "Produkt": "Käse,inScheibengeschnitten,normal",
+        "Produkt": "Käse, in Scheiben geschnitten, normal",
         "price": "$2.69"
     },
     {
-        "Produkt": "Käse,Wedge,Delikatessen",
+        "Produkt": "Käse, Wedge, Delikatessen",
         "price": "$6.99"
     },
     {
-        "Produkt": "Hühnerbrüste,gefroren",
+        "Produkt": "Hühnerbrüste, gefroren",
         "price": "$8.99"
     },
     {
-        "Produkt": "ChickenNuggets,tiefgekühlt",
+        "Produkt": "Chicken Nuggets, tiefgekühlt",
         "price": "$3.79"
     },
     {
-        "Produkt": "Hähnchenfilets,gefroren",
+        "Produkt": "Hähnchenfilets, gefroren",
         "price": "$8.99"
     },
     {
-        "Produkt": "Chips,Kartoffelchips",
+        "Produkt": "Chips, Kartoffelchips",
         "price": "$2.99"
     },
     {
-        "Produkt": "ChocolateChipCookieDough",
+        "Produkt": "Chocolate Chip Cookie Dough",
         "price": "$2.19"
     },
     {
@@ -839,127 +841,128 @@
         "Preis": "$4.19"
     },
     {
-        "Produkt": "Aufschnitt,SchinkenoderHuhn",
+        "Produkt": "Aufschnitt, Schinken oder Huhn",
         "price": "$3.79"
     },
     {
-        "Produkt": "Aufschnitt,SorteTruthahn",
+        "Produkt": "Aufschnitt, Sorte Truthahn",
         "Preis": "$3.69"
     },
     {
-        "Produkt": "CornFlakes,normal",
+        "Produkt": "Corn Flakes, normal",
         "price": "$0.99"
     },
     {
-        "product": "CornFlakes,sugarfrosted",
+        "product": "Corn Flakes, sugar frosted",
         "price": "$1.25"
     },
     {
-        "product": "CottageCheese",
+        "product": "Cottage Cheese",
         "price": "$1.69"
     },
     {
-        "product": "CreamCheese",
+        "product": "Cream Cheese",
         "price": "$1.00"
     },
     {
-        "product": "Cream,heavywhipping",
+        "product": "Cream, heavy whipping",
         "price": "$2.39"
     },
     {
-        "product": "Croissants,$2.49,10oz,,\"L'ovenFresh"
+        "product": "Croissants,$2.49,10 oz,,\"L'oven Fresh"
     },
     {
-        "product": "10ct"
+        "product": "10 ct"
     },
     {
-        "product": "minicroissants,<fontclass=\"\"font8\"\">FROZENONLY</font>\"",
+        "product": "mini croissants, <font class=\"\"font8\"\">FROZEN ONLY</font>\"",
         "price": "$3.00"
     },
     {
-        "product": "Eggs,cagefree",
+        "product": "Eggs, cage free",
         "price": "$2.19"
     },
     {
-        "Produkt": "Eier,normal",
+        "Produkt": "Eier, normal",
         "price": "$1.89"
     },
     {
-        "Produkt": "Fisch1,gefroren(Flunder)",
+        "Produkt": "Fisch 1, gefroren (Flunder)",
         "Preis": "$5.99"
     },
     {
-        "Produkt": "Fisch2,gefroren(Tilapia)",
+        "Produkt": "Fisch 2, gefroren (Tilapia)",
         "Preis": "$5.99"
     },
     {
-        "Produkt": "Fish3"
+        "Produkt": "Fish 3"
     },
     {
-        "product": "(MahiMahiund/oderandere)\"",
+        "product": "(Mahi Mahi und/oder andere)\"",
         "price": "$9.99"
     },
     {
-        "Produkt": "Mehl,Allzweckmehl",
+        "Produkt": "Mehl, Allzweckmehl",
         "price": "$2.79"
     },
     {
-        "Produkt": "Mehl,selbstquellend",
+        "Produkt": "Mehl, selbstquellend",
         "price": "$2.79"
     },
     {
-        "Produkt": "Pommesfrites,gefroren",
+        "Produkt": "Pommes frites, gefroren",
         "price": "$1.99"
     },
     {
-        "Produkt": "Obst1,gefroren(Erdbeeren)",
+        "Produkt": "Obst 1, gefroren (Erdbeeren)",
         "Preis": "$2.99"
     },
     {
-        "Produkt": "Fruit2"
+        "Produkt": "Fruit 2"
     },
     {
-        "product": "(Kirschenund/oderandere)\"",
+        "product": "(Kirschen und/oder andere)\"",
         "price": "$4.59"
     },
+
     {
-        "Produkt": "Müsliriegel,ballaststoffreich",
+        "Produkt": "Müsliriegel, ballaststoffreich",
         "price": "$2.39"
     },
     {
-        "Produkt": "Müsliriegel,normal",
+        "Produkt": "Müsliriegel, normal",
         "price": "$2.39"
     },
     {
-        "Produkt": "Weintrauben,rot",
+        "Produkt": "Weintrauben, rot",
         "price": "$1.99"
     },
     {
-        "Produkt": "GrüneBohnen,Konserven",
+        "Produkt": "Grüne Bohnen, Konserven",
         "price": "$0.69"
     },
     {
-        "Produkt": "Rinderhackfleisch(Chuck,80/20)",
+        "Produkt": "Rinderhackfleisch (Chuck, 80/20)",
         "price": "$2.79"
     },
     {
-        "Produkt": "Rinderhackfleisch(Lende,90/10)",
+        "Produkt": "Rinderhackfleisch (Lende, 90/10)",
         "price": "$4.59"
     },
     {
-        "Produkt": "Rinderhackfleisch,gefroren",
+        "Produkt": "Rinderhackfleisch, gefroren",
         "price": "$10.99"
     },
     {
-        "Produkt": "GemahlenerTruthahn",
+        "Produkt": "Gemahlener Truthahn",
         "price": "$2.26"
     },
     {
-        "Produkt": "GemahlenerTruthahn,gefroren",
+        "Produkt": "Gemahlener Truthahn, gefroren",
         "price": "$4.99"
     },
     {
-        "Produkt": "Schinken,ohneKnochen",
+        "Produkt": "Schinken, ohne Knochen",
         "price": "$6.39"
     },
     {
@@ -971,23 +974,23 @@
         "price": "$2.49"
     },
     {
-        "Produkt": "HotDogBrötchen",
+        "Produkt": "Hot Dog Brötchen",
         "price": "$1.39"
     },
     {
-        "Produkt": "HotDogs,Rindfleisch",
+        "Produkt": "Hot Dogs, Rindfleisch",
         "price": "$5.29"
     },
     {
-        "Produkt": "Eiscreme,Premium",
+        "Produkt": "Eiscreme, Premium",
         "price": "$5.49"
     },
     {
-        "Produkt": "Eiscreme,einfach",
+        "Produkt": "Eiscreme, einfach",
         "price": "$1.50"
     },
     {
-        "Produkt": "Jalopeño-Paprika,inDosen",
+        "Produkt": "Jalopeño-Paprika, in Dosen",
         "price": "$1.34"
     },
     {
@@ -1003,11 +1006,11 @@
         "preis": "$3.49"
     },
     {
-        "Produkt": "Kopfsalat,Eisberg",
+        "Produkt": "Kopfsalat, Eisberg",
         "price": "$1.25"
     },
     {
-        "Produkt": "Mandarin-Orangen,inDosen",
+        "Produkt": "Mandarin-Orangen, in Dosen",
         "price": "$1.00"
     },
     {
@@ -1027,23 +1030,23 @@
         "price": "$2.49"
     },
     {
-        "Produkt": "Milch,Bio",
+        "Produkt": "Milch, Bio",
         "price": "$3.79"
     },
     {
-        "Produkt": "Champignons,Knopf,ganz",
+        "Produkt": "Champignons, Knopf, ganz",
         "price": "$1.99"
     },
     {
-        "Produkt": "Pilze,Stiele/Stücke",
+        "Produkt": "Pilze, Stiele/Stücke",
         "price": "$0.99"
     },
     {
-        "Produkt": "Senf,Dijon",
+        "Produkt": "Senf, Dijon",
         "price": "$1.49"
     },
     {
-        "Produkt": "Senf,gelb",
+        "Produkt": "Senf, gelb",
         "price": "$1.49"
     },
     {
@@ -1055,23 +1058,23 @@
         "price": "$1.50"
     },
     {
-        "Produkt": "Öl,Canola,100%rein",
+        "Produkt": "Öl, Canola, 100% rein",
         "price": "$2.99"
     },
     {
-        "Produkt": "Öl,Olive,100%rein",
+        "Produkt": "Öl, Olive, 100% rein",
         "price": "$7.89"
     },
     {
-        "Produkt": "Öl,Olive,nativextra",
+        "Produkt": "Öl, Olive, nativ extra",
         "Preis": "$8.29"
     },
     {
-        "Produkt": "Zwiebeln,gelb",
+        "Produkt": "Zwiebeln, gelb",
         "price": "$2.29"
     },
     {
-        "Produkt": "Orangensaft,nichtausKonzentrat",
+        "Produkt": "Orangensaft, nicht aus Konzentrat",
         "Preis": "$3.49"
     },
     {
@@ -1079,34 +1082,34 @@
         "price": "$6.99"
     },
     {
-        "Produkt": "BauchspeckoderSchinken,gewürfelt",
+        "Produkt": "Bauchspeck oder Schinken, gewürfelt",
         "price": "$5.79"
     },
     {
-        "product": "Papierhandtücher,$5.99,8Rollen,,,"
+        "product": "Papierhandtücher, $5.99, 8 Rollen,,,"
     },
     {
-        "product": "60Blatt",
+        "product": "60 Blatt",
         "price": ""
     },
     {
-        "Produkt": "Nudeln,Eiernudeln",
+        "Produkt": "Nudeln, Eiernudeln",
         "price": "$1.50"
     },
     {
-        "Produkt": "Nudeln,EllbogenMaccaroni",
+        "Produkt": "Nudeln, Ellbogen Maccaroni",
         "price": "$0.88"
     },
     {
-        "Produkt": "Nudeln,PenneRigate",
+        "Produkt": "Nudeln, Penne Rigate",
         "price": "$1.39"
     },
     {
-        "Produkt": "Nudeln,Rotini/Rotelle/Fusilli",
+        "Produkt": "Nudeln, Rotini/Rotelle/Fusilli",
         "price": "$1.39"
     },
     {
-        "Produkt": "Nudeln,Spaghetti",
+        "Produkt": "Nudeln, Spaghetti",
         "price": "$0.88"
     },
     {
@@ -1114,7 +1117,7 @@
         "price": "$2.79"
     },
     {
-        "Produkt": "Erdnüsse,geröstet",
+        "Produkt": "Erdnüsse, geröstet",
         "price": "$2.64"
     },
     {
@@ -1122,43 +1125,43 @@
         "price": "$1.39"
     },
     {
-        "Produkt": "Pfeffer,schwarz,gemahlen",
+        "Produkt": "Pfeffer, schwarz, gemahlen",
         "price": "$3.99"
     },
     {
-        "Produkt": "PizzaDough",
+        "Produkt": "Pizza Dough",
         "price": "$2.99"
     },
     {
-        "product": "Pizza,frozen(premium)",
+        "product": "Pizza, frozen (premium)",
         "price": "$3.67"
     },
     {
-        "product": "Pizza,frozen(simple)",
+        "product": "Pizza, frozen (simple)",
         "price": "$2.99"
     },
     {
-        "product": "PlasticWrap",
+        "product": "Plastic Wrap",
         "price": "$1.99"
     },
     {
-        "product": "PorkTenderloin,small",
+        "product": "Pork Tenderloin, small",
         "price": "$4.27"
     },
     {
-        "product": "Potatoes,gold(Yukon)",
+        "product": "Potatoes, gold (Yukon)",
         "price": "$5.99"
     },
     {
-        "product": "Potatoes,red",
+        "product": "Potatoes, red",
         "price": "$3.49"
     },
     {
-        "product": "Potatoes,Russet<spanstyle=\"\"mso-spacerun:yes\"\"></span>",
+        "product": "Potatoes, Russet<span style=\"\"mso-spacerun:yes\"\"> </span>",
         "price": "$3.29"
     },
     {
-        "product": "Konfitüre,Erdbeere",
+        "product": "Konfitüre, Erdbeere",
         "price": "$2.49"
     },
     {
@@ -1170,19 +1173,19 @@
         "price": "$1.79"
     },
     {
-        "Produkt": "Rippchen,BabyBack(Schweinefleisch,ungewürzt)",
+        "Produkt": "Rippchen, Baby Back (Schweinefleisch, ungewürzt)",
         "price": "$3.99"
     },
     {
-        "Produkt": "Rippchen,SpareBack(Schweinefleisch,ungewürzt)",
+        "Produkt": "Rippchen, Spare Back (Schweinefleisch, ungewürzt)",
         "price": "$2.99"
     },
     {
-        "Produkt": "Reis,Instant,weiß",
+        "Produkt": "Reis, Instant, weiß",
         "Preis": "$1.49"
     },
     {
-        "Produkt": "Reis,normal",
+        "Produkt": "Reis, normal",
         "price": "$2.98"
     },
     {
@@ -1190,63 +1193,63 @@
         "price": "$1.67"
     },
     {
-        "Produkt": "Salami,inScheibengeschnitten",
+        "Produkt": "Salami, in Scheiben geschnitten",
         "price": "$2.74"
     },
     {
-        "Produkt": "Salami,ganz(1)",
+        "Produkt": "Salami, ganz (1)",
         "price": "$8.99"
     },
     {
-        "Produkt": "Salami,ganz(2)",
+        "Produkt": "Salami, ganz (2)",
         "price": "$7.99"
     },
     {
-        "Produkt": "Salsa,medium",
+        "Produkt": "Salsa, medium",
         "price": "$2.69"
     },
     {
-        "Produkt": "Salz,jodiert",
+        "Produkt": "Salz, jodiert",
         "price": "$0.47"
     },
     {
-        "Produkt": "Soda,Flasche",
+        "Produkt": "Soda, Flasche",
         "price": "$0.88"
     },
     {
-        "Produkt": "Soda,Flasche(Cola-Produkt)",
+        "Produkt": "Soda, Flasche (Cola-Produkt)",
         "Preis": "$1.67"
     },
     {
-        "Produkt": "Soda,Dose",
+        "Produkt": "Soda, Dose",
         "price": "$2.77"
     },
     {
-        "Produkt": "Soda,Dose(Cola-Produkt)",
+        "Produkt": "Soda, Dose (Cola-Produkt)",
         "Preis": "$4.99"
     },
     {
-        "Produkt": "Suppe,Hühner-Nudel,kondensiert",
+        "Produkt": "Suppe, Hühner-Nudel, kondensiert",
         "price": "$0.67"
     },
     {
-        "Produkt": "Suppe,Hühnernudelsuppe,normal",
+        "Produkt": "Suppe, Hühnernudelsuppe, normal",
         "price": "$1.87"
     },
     {
-        "Produkt": "Suppe,Bio",
+        "Produkt": "Suppe, Bio",
         "price": "$2.98"
     },
     {
-        "Produkt": "Suppe,Tomate,kondensiert",
+        "Produkt": "Suppe, Tomate, kondensiert",
         "Preis": "$1.09"
     },
     {
-        "Produkt": "Suppe,Tomate,normal",
+        "Produkt": "Suppe, Tomate, normal",
         "Preis": "$2.07"
     },
     {
-        "Produkt": "SourCream",
+        "Produkt": "Sour Cream",
         "price": "$1.54"
     },
     {
@@ -1254,23 +1257,23 @@
         "price": "$1.27"
     },
     {
-        "Produkt": "Zucker,braun",
+        "Produkt": "Zucker, braun",
         "price": "$2.19"
     },
     {
-        "Produkt": "Zucker,pulverisiert",
+        "Produkt": "Zucker, pulverisiert",
         "price": "$2.19"
     },
     {
-        "Produkt": "Zucker,weiß",
+        "Produkt": "Zucker, weiß",
         "price": "$2.58"
     },
     {
-        "Produkt": "Sirup,Frühstück",
+        "Produkt": "Sirup, Frühstück",
         "price": "$1.98"
     },
     {
-        "Produkt": "Tee,grün,Beutel",
+        "Produkt": "Tee, grün, Beutel",
         "price": "$2.49"
     },
     {
@@ -1282,79 +1285,79 @@
         "Preis": "$0.33"
     },
     {
-        "Produkt": "Tomaten,Schneidemaschine",
+        "Produkt": "Tomaten, Schneidemaschine",
         "price": "$1.99"
     },
     {
-        "Produkt": "Thunfisch,stückig,inWasser",
+        "Produkt": "Thunfisch, stückig, in Wasser",
         "price": "$0.75"
     },
     {
-        "Produkt": "Thunfisch,fest,inWasser",
+        "Produkt": "Thunfisch, fest, in Wasser",
         "Preis": "$1.99"
     },
     {
-        "Produkt": "Vanilleextrakt,rein(keineImitation)",
+        "Produkt": "Vanilleextrakt, rein (keine Imitation)",
         "price": "$6.99"
     },
     {
-        "Produkt": "Gemüse1,gefroren(Erbsen)",
+        "Produkt": "Gemüse 1, gefroren (Erbsen)",
         "price": "$2.48"
     },
     {
-        "Produkt": "Gemüse2,gefroren(andere)",
+        "Produkt": "Gemüse 2, gefroren (andere)",
         "Preis": "$1.49"
     },
     {
-        "Produkt": "Waffeln,gefroren",
+        "Produkt": "Waffeln, gefroren",
         "price": "$1.89"
     },
     {
-        "Produkt": "Wasser,normal/Trinkwasser",
+        "Produkt": "Wasser, normal/Trinkwasser",
         "price": "$0.59"
     },
     {
-        "Produkt": "Wasser,Sprudel/Mineral",
+        "Produkt": "Wasser, Sprudel/Mineral",
         "price": "$1.69"
     },
     {
-        "Produkt": "Weißbrot/Toast,angereichert",
+        "Produkt": "Weißbrot/Toast, angereichert",
         "Preis": "$0.88"
     },
     {
-        "Produkt": "Wein,Tisch,Cabernet",
+        "Produkt": "Wein, Tisch, Cabernet",
         "price": "$6.99"
     },
     {
-        "Produkt": "Wein,Tisch,Chardonnay",
+        "Produkt": "Wein, Tisch, Chardonnay",
         "preis": "$6.99"
     },
     {
-        "Produkt": "Wein,Tisch,WeißerZinfandel",
+        "Produkt": "Wein, Tisch, Weißer Zinfandel",
         "preis": "$7.49"
     },
     {
-        "Produkt": "Joghurt,Dannon(usw.)",
+        "Produkt": "Joghurt, Dannon (usw.)",
         "Preis": "$2.38"
     },
     {
-        "Produkt": "Joghurt,Fage,2%,normal",
+        "Produkt": "Joghurt, Fage, 2%, normal",
         "price": "$1.69"
     },
     {
-        "Produkt": "Joghurt,Fage,mitGeschmack",
+        "Produkt": "Joghurt, Fage, mit Geschmack",
         "price": "$1.69"
     },
     {
-        "Produkt": "Joghurt,aromatisiert,Becher",
+        "Produkt": "Joghurt, aromatisiert, Becher",
         "Preis": "$0.40"
     },
     {
-        "Produkt": "Joghurt,griechisch,natur",
+        "Produkt": "Joghurt, griechisch, natur",
         "Preis": "$1.29"
     },
     {
-        "Produkt": "Joghurt,normal",
+        "Produkt": "Joghurt, normal",
         "price": "$1.99"
     }
 ]
