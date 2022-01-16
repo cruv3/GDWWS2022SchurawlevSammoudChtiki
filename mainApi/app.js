@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 connectDB()
 
 // start server
-const PORT = process.env.PORT2 || 3000
+const PORT = process.env.PORT || 3000
 app.listen( PORT, () => {
     console.log("Server running on port " + PORT);
 })
