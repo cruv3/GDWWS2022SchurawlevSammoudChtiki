@@ -11,10 +11,10 @@
 * ```node```
 ### zuerst
 * ```npm install``` - Installiert die Node Packages.
-### api lokal ausführen
-* ```npm run api``` - Führt den api aus.
-### fake-preise-api lokal ausführen
-* ```npm run fakeapi``` - Führt den api aus.
+### api lokal ausführen (PORT: 3001)
+* ```npm run api``` - Führt den api ausunter ```localhost:3001``` zugreifbar.
+### fake-preise-api lokal ausführen  (PORT: 3002)
+* ```npm run fakeapi``` - Führt den api lokal aus unter ```localhost:3002``` zugreifbar.
 ### poc 
 * ```npm run poc``` - Führt den poc aus.
 
