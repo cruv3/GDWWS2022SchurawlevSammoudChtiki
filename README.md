@@ -1,20 +1,20 @@
-# Web Ausführung:
+# WEB AUSFÜHRUNG:
 
-### API 
-* ```https://wg-ton.herokuapp.com/```
-### FAKE_PREISE_API 
+### api 
+* ```https://wg-ton.herokuapp.com```
+### fake-preise-api
 * ```https://fake-price-api.herokuapp.com```
 
-# Lokale Ausführung:
+# LOKALE AUSFÜHRUNG:
 
-### Prerequisites:
+### prerequisites:
 * ```node```
-### Zuerst
+### zuerst
 * ```npm install``` - Installiert die Node Packages.
-### API 
+### api lokal ausführen
 * ```npm run api``` - Führt den api aus.
-### FAKE_PREISE_API 
+### fake-preise-api lokal ausführen
 * ```npm run fakeapi``` - Führt den api aus.
-### POC 
+### poc 
 * ```npm run poc``` - Führt den poc aus.
 
