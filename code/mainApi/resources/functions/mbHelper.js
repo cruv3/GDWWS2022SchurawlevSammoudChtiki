@@ -2,7 +2,7 @@
 const MB = require('../../db/mbSchema')
 const WG = require('../../db/wgSchema')
 
-const mainUri = 'localhost:3000'
+const mainUri = 'localhost:3001'
 
 async function findMB(wgname) {
     return new Promise((resolve, reject) => {
@@ -38,7 +38,7 @@ async function createMB(wgname, mbname) {
             } else {
                 // if exists create mb
                     let mb = new MB()
-                    mb.uri = mainUri + '/mitbewohner/' + wgname+ "/" + mbname
+                    mb.uri = mainUri + '/wg/' + wgname+ "/mb/" + mbname
                     mb.wg_name = wgname
                     mb.mb_name = mbname
                     mb.save((error) => {
@@ -83,7 +83,7 @@ async function updateMB(wgname, mbname, newname) {
         MB.findOneAndUpdate({ wg_name: wgname, mb_name: mbname }, {
             $set: {
                 mb_name: newname,
-                uri: mainUri + '/mitbewohner/' + wgname + "/" + newname
+                uri: mainUri + '/wg/' + wgname + "/mb/" + newname
             }
         }, (error, data) => {
             if (error) {

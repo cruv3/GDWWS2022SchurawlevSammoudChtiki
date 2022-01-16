@@ -16,7 +16,7 @@ router.get('/',(res)=>{
 router.get('/:pID',(req,res)=>{
     jsonHelper.getSpecifigProducts(req.params.pID)
         .then((result) => res.status(200).json(result))
-        .catch((error) => res.status(400).json({error : error}))
+        .catch((error) => res.status(404).json({error : error}))
 })
 
 

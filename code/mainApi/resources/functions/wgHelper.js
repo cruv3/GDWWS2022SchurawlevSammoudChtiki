@@ -3,7 +3,7 @@ const WG = require('../../db/wgSchema')
 const MB = require('./mbHelper')
 
 
-const mainUri = 'localhost:3000'
+const mainUri = 'localhost:3001'
 
 async function findWG(wgname) {
     return new Promise((resolve, reject) => {
@@ -13,7 +13,6 @@ async function findWG(wgname) {
             })
         } else {
             WG.find({ wg_name: wgname }, (error, data) => {
-                console.log(data)
                 if (error) {
                     reject(error)
                 } else if (data.length == 0) {

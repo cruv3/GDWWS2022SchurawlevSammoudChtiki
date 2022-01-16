@@ -6,7 +6,7 @@ const SD = require('../../db/sdSchema')
 const MB = require('../../db/mbSchema')
 const WG = require('../../db/wgSchema')
 
-const mainUri = 'localhost:3000'
+const mainUri = 'localhost:3001'
 
 // functionHelper
 const MB_helper = require('./mbHelper')
@@ -86,7 +86,6 @@ async function sumSD(wgname){
                 }
 
                 let finished = []
-                let errors = []
                 for(i in allMembers){
                     await findSD(wgname,allMembers[i])
                         .then(result => {finished.push(result)})
@@ -129,7 +128,7 @@ async function findSD(wgname,mbname) {
 }
 
 
-async function createSD(wgname, mbname, sdname, bezahler, betrag,profitierer) {
+async function createSD(wgname,sdname, bezahler, betrag,profitierer) {
     return new Promise((resolve, reject) => {
         // Check ob wg existiert
         WG.findOne({ wg_name: wgname }, (error, data) => {
@@ -148,7 +147,7 @@ async function createSD(wgname, mbname, sdname, bezahler, betrag,profitierer) {
                                 reject(`could not find ${bezahler}, for ${sdname}`)
                             else {
                                 let sd = new SD()
-                                sd.uri = mainUri + '/sd/' + wgname + "/" + mbname + "/" + sdname
+                                sd.uri = mainUri + '/wg/' + wgname + "/mb/" + bezahler + "/sd/" + sdname
                                 sd.wg_name = wgname
                                 sd.sd_name = sdname
                                 sd.bezahler = bezahler
