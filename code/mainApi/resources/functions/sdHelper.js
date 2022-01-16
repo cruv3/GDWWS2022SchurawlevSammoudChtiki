@@ -11,12 +11,6 @@ const mainUri = 'localhost:3001'
 // functionHelper
 const MB_helper = require('./mbHelper')
 
-class Nutzer {
-    constructor(mbname, betrag){
-        this.mb_name = mbname
-        this.schulden = betrag
-    }
-}
 
 // kalkuliert die Summe fuer jeden mb
 async function removeDuplicate(data){
@@ -46,7 +40,6 @@ async function removeDuplicate(data){
                 }
                 summe = 0
                 unique.push(data[i].mb_name)
-                
                 x++
                 summe += data[i].schulden
     
@@ -58,6 +51,7 @@ async function removeDuplicate(data){
                     })
                 }
             }else if(unique.includes(data[i].mb_name) && i == data.length - 1){
+                x++
                 end.push({
                     mb_name : unique[x],
                     schuld : summe
