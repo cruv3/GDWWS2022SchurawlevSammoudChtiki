@@ -3,7 +3,6 @@ const bodyParser = require("body-parser")
 const router = express.Router();
 
 router.use(bodyParser.json())
-router.use(bodyParser.urlencoded({ extended: true }))
 
 // functionHelper
 const WG = require('./functions/wgHelper')
@@ -27,7 +26,7 @@ router.get('/wg', (req, res) => {
 router.get('/wg/:wgID', (req, res) => {
     WG.findWG(req.params.wgID)
         .then(result => res.status(200).json({result}))
-        .catch(error => res.status(400).json({error : error}))
+        .catch(error => res.status(404).json({error : error}))
 })
 
 // WG hinzufügen
@@ -58,7 +57,7 @@ router.put('/wg/:wgID', (req, res) => {
 
         WG.updateWG(req.params.wgID,req.body.wg_name)
             .then(result => res.status(200).json({stauts: "updated", result}))
-            .catch(error => res.status(400).json({error: error}))
+            .catch(error => res.status(404).json({error: error}))
     }
 })
 
@@ -67,7 +66,7 @@ router.put('/wg/:wgID', (req, res) => {
 router.delete('/wg/:wgID', (req, res) => {
     WG.deleteWG(req.params.wgID)
         .then(result => res.status(200).json({status : "deleted", result}))
-        .catch(error => res.status(400).json({error : error}))
+        .catch(error => res.status(404).json({error : error}))
 })
 
 //**************************************************************************************************
@@ -87,7 +86,7 @@ router.get('/wg/:wgID/mb/', (req, res) => {
 router.get('/wg/:wgID/mb/', (req, res) => {
     MB.findMB(req.params.wgID)
         .then(result => res.status(200).json(result))
-        .catch(error => res.status(400).json(error))
+        .catch(error => res.status(404).json(error))
 })
 
 // mitbewohner in einem wg hinzufügen
@@ -101,8 +100,8 @@ router.post('/wg/:wgID/mb', async (req, res) => {
     } else {
 
         MB.createMB(req.params.wgID, req.body.mb_name)
-            .then(result => res.status(200).json({ status: "created", result }))
-            .catch(err => res.status(400).json({error : err}))
+            .then(result => res.status(201).json({ status: "created", result }))
+            .catch(err => res.status(404).json({error : err}))
 
     }
 })
@@ -119,7 +118,7 @@ router.put('/wg/:wgID/mb/:mbID', async (req, res) => {
 
         MB.updateMB(req.params.wgID, req.params.mbID, req.body.mb_name)
             .then(result => res.status(200).json({ status: "updated", mb_name: result }))
-            .catch(err => res.status(400).json({ error: err }))
+            .catch(err => res.status(404).json({ error: err }))
     }
 })
 
@@ -128,7 +127,7 @@ router.put('/wg/:wgID/mb/:mbID', async (req, res) => {
 router.delete('/wg/:wgID/mb/:mbID', async (req, res) => {
     MB.deleteMB(req.params.wgID, req.params.mbID)
         .then(result => { res.status(200).json({ status: "deleted", mb: result }) })
-        .catch(err => res.status(400).json({ error: err }))
+        .catch(err => res.status(404).json({ error: err }))
 })
 
 //**************************************************************************************************
@@ -140,7 +139,7 @@ router.delete('/wg/:wgID/mb/:mbID', async (req, res) => {
 router.get('/wg/:wgID/mb/sd', (req,res)=>{
     SD.sumSD(req.params.wgID)
         .then(result => res.status(200).json(result))
-        .catch(error => res.status(400).json(error))
+        .catch(error => res.status(404).json(error))
 })
 
 // mitbewohners schulden in einem wg
@@ -148,7 +147,7 @@ router.get('/wg/:wgID/mb/sd', (req,res)=>{
 router.get('/wg/:wgID/mb/:mbID/sd', (req, res) => {
     SD.findSD(req.params.wgID, req.params.mbID)
         .then(result => res.status(200).json(result))
-        .catch(error => res.status(400).json({error: error}))
+        .catch(error => res.status(404).json({error: error}))
 })
 
 // multi schulden to mitbewohner
@@ -172,7 +171,7 @@ router.post('/wg/:wgID/mb/:mbID/sd', async (req, res) => {
     // only start if every syntax inside body is correct
     if(counterCheck == req.body.length){
         for(i in req.body){
-            await SD.createSD(req.params.wgID,req.params.mbID,req.body[i].sd_name,req.body[i].bezahler,req.body[i].betrag,req.body[i].profitierer)
+            await SD.createSD(req.params.wgID,req.body[i].sd_name,req.body[i].bezahler,req.body[i].betrag,req.body[i].profitierer)
             .then(result => added.push(result))
             .catch(error => errors.push(error))
         }
@@ -189,7 +188,7 @@ router.post('/wg/:wgID/mb/:mbID/sd', async (req, res) => {
 router.delete('/wg/:wgID/mb/:mbID/sd/:sdID', (req, res) => {
         SD.deleteSD(req.params.wgID, req.params.mbID, req.params.sdID)
             .then(result => res.status(200).json({status : "deleted", result}))
-            .catch(error => res.status(400).json({error : error}))
+            .catch(error => res.status(404).json({error : error}))
 })
 
 module.exports = [
