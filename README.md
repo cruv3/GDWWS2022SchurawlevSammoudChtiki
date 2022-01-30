@@ -1,5 +1,5 @@
 # VIDEO DEMO
-[![Watch the video]()](https://www.youtube.com/embed/DWmP7CyjJ_w)
+[![Watch the video](https://github.com/cruv3/GDWWS2022SchurawlevSammoudChtiki/blob/main/Artefakte/video.png)](https://www.youtube.com/embed/DWmP7CyjJ_w)
 
 # WEB AUSFÜHRUNG:
 
