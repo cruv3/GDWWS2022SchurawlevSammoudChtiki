@@ -2,6 +2,7 @@ const fetch = require("node-fetch");
 
 const api = "https://wg-ton.herokuapp.com/api/";
 
+
 async function start() {
   // creating new Member
   const responseMember = await fetch(api + "/wg/BesteWG/mb", {
